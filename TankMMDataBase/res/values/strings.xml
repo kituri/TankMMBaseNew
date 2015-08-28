@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--
+         文案类别前缀规范:
+		报错类: err_
+		提示类: msg_
+		状态类: sta_
+		控件显示:cap_
+    -->
+
+    <string name="app_name">钢舞姬图书馆</string>
+    <string name="cap_database_category_equip">装备</string>
+    <string name="cap_database_category_technology">科技</string>
+    <string name="cap_database_category_tank">钢舞姬</string>
+    <string name="cap_database_category_development">研发</string>
+    <string name="cap_database_category_map">战役</string>
+    <string name="cap_database_category_skill">魔改</string>
+    <string name="cap_database_category_quest">任务</string>
+    <string name="cap_database_category_metaphysics">玄学</string>
+    <string name="cap_database_category_satellite">卫星</string>
+    <string name="msg_is_disabled">该功能还未开发，开发时请奔走相告</string>
+    
+    <string name="cap_btn_ok">确定</string>
+
+    <!-- 钢舞姬查询和相关页面 -->
+    <string name="cap_tank_list_title">钢舞姬查询</string>
+    <string name="cap_tank_list_search_label">当前查询类别：</string>
+    <string name="cap_tank_detail_title">坦克属性</string>
+    <string name="cap_tank_statistics_fire">火力：%1$d</string>
+    <string name="cap_tank_statistics_armourpiercing">穿甲：%1$d</string>
+    <string name="cap_tank_statistics_hit">命中：%1$d</string>
+    <string name="cap_tank_statistics_durable">耐久：%1$d</string>
+    <string name="cap_tank_statistics_armour">装甲：%1$d</string>
+    <string name="cap_tank_statistics_dodge">回避：%1$d</string>
+    <string name="cap_tank_statistics_hide">隐蔽：%1$d</string>
+    <string name="cap_tank_statistics_spot">侦查：%1$d</string>
+    <string name="cap_tank_statistics_range">射程：%1$d</string>
+    <string name="cap_tank_statistics_acqierement">才艺：%1$s</string>
+    <string name="cap_tank_statistics_tankequipmentslots">装备：%1$s</string>
+    <string name="cap_tank_statistics_engine">引擎：%1$s</string>
+    <string name="cap_tank_statistics_bodywork">车体：%1$s</string>
+    <string name="cap_dialog_choice_filter">请选择筛选条件</string>
+    <string name="cap_dialog_selected">当前</string>
+    
+    <!-- 装备页 -->
+    <string name="cap_equip_list_title">装备</string>
+    <string name="cap_equip_sp_name">[%1$s]</string>
+    
+    <!-- 科技页 -->
+    <string name="cap_tech_list_title">科技</string>
+    <string name="cap_tech_sp_name">[%1$s]</string>
+</resources>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Button xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/actionbar_item"
+    style="@style/ActionBarBtnItem"
+    android:layout_marginBottom="5dp"
+    android:layout_marginRight="8dp"
+    android:layout_marginTop="5dp"
+    android:background="@null"
+    android:clickable="true"
+    android:gravity="center"
+    android:onClick="onActionbarClick"
+    android:paddingLeft="15dp"
+    android:paddingRight="15dp"
+    android:singleLine="true" />
