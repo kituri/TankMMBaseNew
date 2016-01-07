@@ -20,9 +20,11 @@ public class TransformerUtils {
 	}
 	
 	static public int getTankNationalityIconResId(Context context, TankData data){
-		if(data.getTankType() < TankDataBase.TANK_NATIONAL.ALL_ICONS.length){
-			String icon = TankDataBase.TANK_NATIONAL.ALL_ICONS[data.getTankType()];
-			return context.getResources().getIdentifier(icon, "drawable", context.getPackageName());
+		for(int i = 0; i < TankDataBase.TANK_NATIONAL.ALL_STRING.length; i++){
+			if(data.getTankNationality().equals(TankDataBase.TANK_NATIONAL.ALL_STRING[i])){
+				String icon = TankDataBase.TANK_NATIONAL.ALL_ICONS[i];
+				return context.getResources().getIdentifier(icon, "drawable", context.getPackageName());
+			}
 		}
 		return android.R.color.transparent;
 	}
@@ -41,6 +43,10 @@ public class TransformerUtils {
 			return context.getResources().getIdentifier(icon, "drawable", context.getPackageName());
 		}
 		return android.R.color.transparent;
+	}
+	
+	static public int getResId(Context context, String icon){
+		return context.getResources().getIdentifier(icon, "drawable", context.getPackageName());
 	}
 	
 //	static public String getTankSearchDataName(Context context, TankSearchData data){

@@ -59,10 +59,13 @@ public class ItemEquipList extends RelativeLayout implements Populatable<Entry>,
 	
 	private void setData(EquipData data) {
 		//iv_equip.set
-		//iv_equip_type.setImageResource(TransformerUtils.getEquipIconResId(getContext(), data));
-		iv_equip.setImageResource(TransformerUtils.getEquipIconResId(getContext(), data));
-		iv_equip_type.setImageResource(android.R.color.transparent);
-		tv_name.setText(data.getEquipName());
+		iv_equip_type.setImageResource(TransformerUtils.getEquipIconResId(getContext(), data));
+		if(TextUtils.isEmpty(data.getEquipName())){
+			iv_equip.setImageResource(android.R.color.transparent);
+			tv_name.setText("");
+		}else{
+			tv_name.setText(data.getEquipName());
+		}	
 	}
 	
 	@Override
@@ -97,9 +100,6 @@ public class ItemEquipList extends RelativeLayout implements Populatable<Entry>,
 	public void onClick(View v) {
 		// TODO Auto-generated method stub
 		if(mListener == null){
-			return;
-		}
-		if(TextUtils.isEmpty(mData.getEquipName())){
 			return;
 		}
 		mData.setIntent(new Intent(Intent.ACTION_EQUIP_DETAIL));

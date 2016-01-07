@@ -1,0 +1,200 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <include layout="@layout/common_title_bar" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" >
+
+        <LinearLayout
+            android:id="@+id/ll_root"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="4dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/bg_dialog_and_other"
+            android:orientation="vertical" >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:text="@string/cap_existing_equip"
+                android:textColor="@color/td_highlight_text"
+                android:textSize="@dimen/tv_size_medium_big"
+                android:textStyle="bold" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp" >
+
+                <GridView
+                    android:id="@+id/gv_existing_equip"
+                    android:layout_width="320dp"
+                    android:layout_height="320dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerInParent="true"
+                    android:horizontalSpacing="4dp"
+                    android:numColumns="4"
+                    android:stretchMode="columnWidth"
+                    android:verticalSpacing="4dp" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="32dp"
+                android:layout_gravity="center"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="@string/cap_create_equip_lv"
+                    android:textColor="@color/td_highlight_text"
+                    android:textSize="@dimen/tv_size_medium_big"
+                    android:textStyle="bold" />
+
+                <com.kituri.app.widget.XImageView
+                    android:id="@+id/iv_subtraction"
+                    android:layout_width="22dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="10dp"
+                    android:gravity="center"
+                    android:src="@drawable/btn_subtraction" />
+
+                <TextView
+                    android:id="@+id/tv_create_lv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_edit_input"
+                    android:gravity="center"
+                    android:text="2"
+                    android:textColor="@color/td_highlight_text"
+                    android:textSize="@dimen/tv_size_medium_big" />
+
+                <com.kituri.app.widget.XImageView
+                    android:id="@+id/iv_plus"
+                    android:layout_width="22dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="10dp"
+                    android:gravity="center"
+                    android:src="@drawable/btn_plus" />
+
+                <com.kituri.tankmmdatabase.widget.TankToggleButton
+                    android:id="@+id/tb_mode"
+                    android:layout_width="64dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="10dp"
+                    android:background="@drawable/btn_green_red_high_light_selector"
+                    android:gravity="center"
+                    android:text="@string/cap_btn_equip_normal_mode"
+                    android:textColor="@android:color/white"
+                    android:textSize="@dimen/tv_size_medium_big" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="32dp"
+                android:layout_gravity="center"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="@string/cap_create_equip_count"
+                    android:textColor="@color/td_highlight_text"
+                    android:textSize="@dimen/tv_size_medium_big"
+                    android:textStyle="bold" />
+
+                <com.kituri.app.widget.XImageView
+                    android:id="@+id/iv_subtraction_count"
+                    android:layout_width="22dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="10dp"
+                    android:gravity="center"
+                    android:src="@drawable/btn_subtraction" />
+
+                <TextView
+                    android:id="@+id/tv_create_count"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_edit_input"
+                    android:gravity="center"
+                    android:text="1"
+                    android:textColor="@color/td_highlight_text"
+                    android:textSize="@dimen/tv_size_medium_big" />
+
+                <com.kituri.app.widget.XImageView
+                    android:id="@+id/iv_plus_count"
+                    android:layout_width="22dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="10dp"
+                    android:gravity="center"
+                    android:src="@drawable/btn_plus" />
+
+                <com.kituri.app.widget.XTextView
+                    android:layout_width="64dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="10dp"
+                    android:background="@drawable/btn_green_red_high_light_selector"
+                    android:gravity="center"
+                    android:visibility="invisible"
+                    android:text="@string/cap_btn_equip_normal_mode"
+                    android:textColor="@android:color/white"
+                    android:textSize="@dimen/tv_size_medium_big" />
+            </LinearLayout>
+            
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginTop="20dp" >
+
+                <com.kituri.app.widget.XTextView
+                    android:id="@+id/tv_ok"
+                    android:layout_width="100dp"
+                    android:layout_height="42dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/btn_blue_high_light"
+                    android:gravity="center"
+                    android:text="@string/cap_btn_equip_create"
+                    android:textColor="@android:color/white"
+                    android:textSize="@dimen/tv_size_medium_med" />
+
+                <com.kituri.app.widget.XTextView
+                    android:id="@+id/tv_default"
+                    android:layout_width="100dp"
+                    android:layout_height="42dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentTop="true"
+                    android:background="@drawable/btn_blue_high_light"
+                    android:gravity="center"
+                    android:text="@string/cap_btn_equip_clear"
+                    android:textColor="@android:color/white"
+                    android:textSize="@dimen/tv_size_medium_med" />
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

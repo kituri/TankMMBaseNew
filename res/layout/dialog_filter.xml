@@ -14,7 +14,7 @@
         android:background="@drawable/bg_dialog_and_other"
         android:orientation="vertical" >
 
-        <com.kituri.app.widget.XTextView
+        <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"

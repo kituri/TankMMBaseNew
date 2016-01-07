@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerInParent="true"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/bg_dialog_and_other"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <RelativeLayout
+                android:layout_width="60dp"
+                android:layout_height="60dp" >
+
+                <RelativeLayout
+                    android:id="@+id/iv_icon"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_centerHorizontal="true"
+                    android:background="@drawable/bg_tech_small" >
+                </RelativeLayout>
+
+                <ImageView
+                    android:id="@+id/iv_tech"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_alignTop="@+id/iv_icon"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="8dp"
+                    android:src="@drawable/icon_tech_00" />
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/tv_name"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:paddingTop="10dp"
+                android:text="标准弹弹弹"
+                android:textColor="@color/td_highlight_text"
+                android:textSize="@dimen/tv_size_medium_big"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal" >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" >
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="19dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1"
+                    android:background="@drawable/btn_tech_rank_bk"
+                    android:src="@drawable/icon_rank_lv_01" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" >
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="19dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1"
+                    android:background="@drawable/btn_tech_rank_bk"
+                    android:src="@drawable/icon_rank_lv_02" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" >
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="19dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1"
+                    android:background="@drawable/btn_tech_rank_bk"
+                    android:src="@drawable/icon_rank_lv_03" />
+            </RelativeLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal" >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" >
+
+                <com.kituri.tankmmdatabase.widget.ColorNumberPicker
+                    android:id="@+id/np_tech01"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" >
+
+                <com.kituri.tankmmdatabase.widget.ColorNumberPicker
+                    android:id="@+id/np_tech02"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" >
+
+                <com.kituri.tankmmdatabase.widget.ColorNumberPicker
+                    android:id="@+id/np_tech03"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true" />
+            </RelativeLayout>
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginTop="10dp" >
+
+            <com.kituri.app.widget.XTextView
+                android:id="@+id/btn_ok"
+                android:layout_width="100dp"
+                android:layout_height="42dp"
+                android:layout_gravity="center"
+                android:background="@drawable/btn_blue_high_light"
+                android:gravity="center"
+                android:text="@string/cap_btn_ok"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/tv_size_medium_med" />
+
+            <com.kituri.app.widget.XTextView
+                android:id="@+id/btn_close"
+                android:layout_width="100dp"
+                android:layout_height="42dp"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:background="@drawable/btn_blue_high_light"
+                android:gravity="center"
+                android:text="@string/cap_btn_close"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/tv_size_medium_med" />
+        </RelativeLayout>
+    </LinearLayout>
+
+</RelativeLayout>

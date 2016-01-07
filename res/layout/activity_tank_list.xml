@@ -16,7 +16,7 @@
         android:background="@drawable/bg_dialog_and_other"
         android:orientation="vertical" >
 
-        <LinearLayout
+                <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="@dimen/sub_titlebar_height"
             android:layout_marginLeft="4dp"
@@ -28,19 +28,22 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_gravity="center_vertical"
-                android:gravity="left|fill_vertical"
+                android:gravity="center"
                 android:layout_marginLeft="10dp"
                 android:text="@string/cap_tank_list_search_label"
                 android:textColor="@android:color/white"
-                android:textSize="@dimen/tv_size_medium_big" />
+                android:textSize="@dimen/tv_size_medium_big" 
+                android:layout_weight="1"
+                />
 
             <com.kituri.app.widget.XTextView
+                 android:layout_weight="1"
                 android:id="@+id/tv_search"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_gravity="center_vertical"
                 android:drawablePadding="10dp"
-                android:drawableRight="@drawable/icon_select_down_arrow"
+                android:drawableLeft="@drawable/icon_select_down_arrow"
                 android:gravity="left|fill_vertical"
                 android:paddingRight="10dp"
                 android:textColor="@color/td_highlight_text"

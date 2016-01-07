@@ -17,8 +17,10 @@ import com.kituri.app.data.Entry;
 import com.kituri.app.widget.Selectable;
 import com.kituri.app.widget.SelectionListener;
 import com.kituri.app.widget.dialog.CustomDialog;
+import com.kituri.tankmmdatabase.KituriTankMMApplication;
 import com.kituri.tankmmdatabase.R;
 import com.kituri.tankmmdatabase.controller.TechManager;
+import com.kituri.tankmmdatabase.data.tank.TankSearchFilterData;
 import com.kituri.tankmmdatabase.data.tech.TechData;
 import com.kituri.tankmmdatabase.data.tech.TechPageData;
 import com.kituri.tankmmdatabase.data.tech.TechTypeData;
@@ -82,7 +84,12 @@ public class TechDetailActivity extends BaseActivity implements OnClickListener,
 		setData(mTechTypeData);
 	}
 
-	private void setData(TechTypeData data) {
+	private void setData(TechTypeData data) {		
+		if(mTechTypeData instanceof TechData){
+			TechData techData = (TechData)mTechTypeData;
+			rankChange(techData.getRank());			
+			return;
+		}
 		rankChange(1);
 	}
 	
@@ -293,6 +300,11 @@ public class TechDetailActivity extends BaseActivity implements OnClickListener,
 			mDetailDialog.show();
 		}else if(action.equals(Intent.ACTION_DIALOG_DISMISS)){
 			mDetailDialog.dismiss();
+		}else if(action.equals(Intent.ACTION_TANK_LIST)){
+			mDetailDialog.dismiss();
+			TankSearchFilterData searchData = new TankSearchFilterData();
+			searchData.setTechData((TechData) item);
+			KituriTankMMApplication.gotoTankList(this, searchData);
 		}
 	}
 	

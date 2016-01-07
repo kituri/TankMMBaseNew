@@ -2,11 +2,6 @@ package com.kituri.tankmmdatabase.ui.tech;
 
 import java.util.List;
 
-import android.view.View;
-import android.view.View.OnClickListener;
-import android.widget.ListView;
-import android.widget.TextView;
-
 import com.kituri.app.controller.EntryAdapter;
 import com.kituri.app.data.Entry;
 import com.kituri.app.widget.SelectionListener;
@@ -18,8 +13,13 @@ import com.kituri.tankmmdatabase.data.tech.TechSearchData;
 import com.kituri.tankmmdatabase.data.tech.TechTypeData;
 import com.kituri.tankmmdatabase.model.Intent;
 import com.kituri.tankmmdatabase.ui.common.BaseActivity;
-import com.kituri.tankmmdatabase.widget.dialog.DialogTechFilter;
+import com.kituri.tankmmdatabase.widget.dialog.DialogTechTypeFilter;
 import com.kituri.tankmmdatabase.widget.tech.ItemTypeTech;
+
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.ListView;
+import android.widget.TextView;
 
 public class TechListActivity extends BaseActivity implements SelectionListener<Entry>, OnClickListener {
 
@@ -31,7 +31,7 @@ public class TechListActivity extends BaseActivity implements SelectionListener<
 	private ListView lv_tech_list;
 	private TextView tv_search;
 	private CustomDialog mCustomDialog;
-	private DialogTechFilter mDialogSearchFilter;
+	private DialogTechTypeFilter mDialogSearchFilter;
 	
 	private EntryAdapter mAdapter;
 	private TechSearchData mSearchData;
@@ -50,14 +50,15 @@ public class TechListActivity extends BaseActivity implements SelectionListener<
 		lv_tech_list = (ListView) findViewById(R.id.lv_tech_list);
 		tv_search = (TextView) findViewById(R.id.tv_search);
 		
-		mDialogSearchFilter = new DialogTechFilter(this);
+		mDialogSearchFilter = new DialogTechTypeFilter(this);
 		mCustomDialog = new CustomDialog(this, mDialogSearchFilter);
 		
 		mAdapter = new EntryAdapter(this);
 		lv_tech_list.setAdapter(mAdapter);
 		mDialogSearchFilter.setSelectionListener(this);
 		mAdapter.setSelectionListener(this);
-		tv_search.setOnClickListener(this);		
+		tv_search.setOnClickListener(this);	
+		findViewById(R.id.tv_tech_emu).setOnClickListener(this);
 		
 		setData(mSearchData);
 	}
@@ -97,6 +98,8 @@ public class TechListActivity extends BaseActivity implements SelectionListener<
 			mCustomDialog.dismiss();
 			mSearchData = (TechSearchData)item;
 			setData(mSearchData);
+		}else if(action.equals(Intent.ACTION_DIALOG_DISMISS)){
+			mCustomDialog.dismiss();
 		}
 	}
 
@@ -107,6 +110,9 @@ public class TechListActivity extends BaseActivity implements SelectionListener<
 		case R.id.tv_search:
 			mDialogSearchFilter.populate(TechManager.getTechFilterListEntryForDialog(this, mSearchData));
 			mCustomDialog.show();
+			break;
+		case R.id.tv_tech_emu:
+			KituriTankMMApplication.gotoTechEmu(this);
 			break;
 
 		default:

@@ -30,21 +30,12 @@
                 android:layout_width="60dp"
                 android:layout_height="60dp" >
 
-                <com.kituri.app.widget.XRelativeLayout
+                <RelativeLayout
                     android:id="@+id/iv_icon"
                     android:layout_width="60dp"
                     android:layout_height="60dp"
                     android:layout_centerHorizontal="true"
-                    android:background="@drawable/bg_dialog_and_other" />
-
-                <ImageView
-                    android:id="@+id/iv_equip"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:layout_alignTop="@+id/iv_icon"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginTop="8dp"
-                    android:src="@drawable/icon_equip_00" />
+                    android:background="@drawable/bg_tech_small" />
 
                 <ImageView
                     android:id="@+id/iv_equip_type"
@@ -55,6 +46,15 @@
                     android:layout_marginBottom="4dp"
                     android:layout_marginLeft="4dp"
                     android:src="@drawable/icon_equip_type_01" />
+
+                <ImageView
+                    android:id="@+id/iv_equip"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/icon_equip_00" />
+
             </RelativeLayout>
 
             <TextView

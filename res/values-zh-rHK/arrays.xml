@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="bullet_manager_main_gun">
+        <item>常規彈</item>
+        <item>硬芯彈</item>
+        <item>脫殼彈</item>
+        <item>榴彈</item>
+        <item>火箭彈</item>
+        <item>破甲彈</item>
+        <item>碎甲彈</item>
+    </string-array>
+    <string-array name="equip_manager_solt">
+        <item>炮座</item>
+        <item>改裝</item>
+        <item>內艙</item>
+        <item>外身</item>
+        <item>內壁</item>
+        <item>炮架</item>
+        <item>特殊</item>
+    </string-array>
+    <string-array name="equip_manager_all">
+        <item>炮座</item>
+        <item>改裝</item>
+        <item>內艙</item>
+        <item>外身</item>
+        <item>內壁</item>
+        <item>炮架</item>
+        <item>特殊</item>
+    </string-array>
+    <string-array name="tank_manager_tag_not_live2d">
+        <item>紙片人</item>
+    </string-array>
+    <string-array name="tank_manager_default_all_string">
+        <item>全部</item>
+    </string-array>
+    <string-array name="tank_manager_statistic_all_string">
+        <item>火力</item>
+        <item>穿甲</item>
+        <item>命中</item>
+        <item>耐久</item>
+        <item>裝甲</item>
+        <item>閃避</item>
+        <item>隱蔽</item>
+        <item>偵察</item>
+    </string-array>
+    <string-array name="tank_manager_national_all_string">
+        <item>英國</item>
+        <item>美國</item>
+        <item>德國</item>
+        <item>蘇聯</item>
+        <item>法國</item>
+        <item>中國</item>
+    </string-array>
+    <string-array name="tank_manager_res_all_string">
+        <item>殘骸</item>
+        <item>計劃</item>
+        <item>模塊</item>
+        <item>人偶</item>
+    </string-array>
+    <string-array name="tank_manager_type_all_string">
+        <item>重坦</item>
+        <item>中坦</item>
+        <item>輕坦</item>
+        <item>自行</item>
+        <item>輕殲</item>
+        <item>突擊</item>
+    </string-array>
+    <string-array name="tank_manager_star_all_string">
+        <item>壹星</item>
+        <item>二星</item>
+        <item>三星</item>
+    </string-array>
+    <string-array name="tech_manager_type_all_string">
+        <item>主炮</item>
+        <item>防護</item>
+        <item>車體</item>
+        <item>引擎</item>
+        <item>索敵</item>
+    </string-array>
+    <string-array name="tech_manager_main_gun_all_string">
+        <item>標準彈（AP）</item>
+        <item>硬芯彈（APCR）</item>
+        <item>脫殼彈（APDS）</item>
+        <item>榴彈（HE）</item>
+        <item>火箭彈（RP）</item>
+        <item>破甲彈（HEAT）</item>
+        <item>碎甲彈（HESH）</item>
+    </string-array>
+    <string-array name="tech_manager_shield_all_string">
+        <item>標準防護</item>
+        <item>重裝防護</item>
+        <item>輕薄防護</item>
+    </string-array>
+    <string-array name="tech_manager_bodywork_all_string">
+        <item>綜合車身</item>
+    </string-array>
+    <string-array name="tech_manager_engine_all_string">
+        <item>綜合引擎</item>
+    </string-array>
+    <string-array name="tech_manager_seek_all_string">
+        <item>綜合索敵</item>
+    </string-array>
+    <string-array name="tip_manager_terrain_attribute">
+        <item>火力</item>
+        <item>穿甲</item>
+        <item>命中</item>
+        <item>耐久</item>
+        <item>裝甲</item>
+        <item>閃避</item>
+        <item>隱蔽</item>
+        <item>偵察</item>
+        <item>射程</item>
+        <item>被暴擊率</item> 
+        <item>被傷害</item>
+        <item>阻燃</item>              
+    </string-array>
+    <string-array name="ver_update_history">
+        <item>            【1.1.2】 
+\n\n
+1.修復因友盟自動更新異常導致會下載奇怪的"patch"文件的問題。\n
+2.Live2D現改為使用單獨的APK資源包，下載後點安裝Live2D即可（每次更新本體時Live2D動畫都是通用的）。\n
+3.本體讀取Live2D將從SD裏的Live2D文件夾裏讀取。\n
+4.版本更新改成“設置”。設置頁面包含以下內容：全部授勛模式、安裝Live2D資源、版本更新歷史、版本更新。\n
+5.增加並支持繁體語言版本。（應霞飛同學之邀推出國際化版本第壹步，之後可能會退出日文、英文、德文等國際化版本）\n
+6.修復潘興和A2等彈種缺失的問題。（歡迎老大前來背鍋）\n
+7.修改妹子們的默認排序，按照先星數後車型進行排序，減少大家去點篩選的繁瑣過程。\n
+8.妹子詳情頁增加查看地形適應性入口，點擊可以看到該妹子在各個地形中的適應情況。\n
+9.攻略頁面增加地形壹覽。\n
+10.Live2D加載失敗或沒有Live2D時，現在會有提示了。
+\n\n
+【1.1.1 雙旦版（聖誕+元旦）】
+\n\n
+1.修復了防護數據的錯誤（這回老大給力了……） \n
+2.增加“裝備成本計算小工具”功能。 \n
+3.首頁icon調整，使其更美觀和貼切（有壹點點私心的調整~）\n
+4.自動升級改為手動，指揮官們可以點擊查看是不是有新的更新。（當然有新的更新時，也會自動用個類似小紅點的方式提醒您~BadgeView~）
+\n\n
+【1.1.0 聖誕版】
+\n\n
+
+1.妹子總量增加到了212個\n
+2.實裝科技中所有圖標的樣子（劃線別找我，那個真的很煩的……）\n
+3.實裝Live2D，在人物介紹旁邊那個S.V.S標誌點擊即可。（如果發現點了就退出來，說明這個妹子沒有Live2D)\n
+4.接上條，妹子詳情頁更新了壹些人物介紹。\n
+5.這個包有點大，是full版本（50MB）。（live2d的關系）\n
+6.本次沒有彩蛋啦，不過全體授勛功能保留。(請點兩下主界面的佐伊頭像）\n
+7.這次沒彩蛋，不用費力找了，有彩蛋我會說明滴。\n
+8.玄學現在已經統壹開放了。\n
+9.授勛等因為數據不準確的相關BUG現已修復。\n
+\n\n
+
+【1.0.9】
+\n\n
+1.優化小圖片讀取（預加載技術，LRU算法）。\n
+2.優化攻略顯示（壹些黑色字不會顯示了，統壹顯示為白色字，與背景更加融洽，易閱讀）。\n
+3.修復RP和HE的命中缺失問題\n
+4.死水姬務段模擬器功能實現。(這貨真的不是大建，不是大建，不是大建)\n
+5.科技模塊增加科技模擬器功能。(支持分享)。\n
+6.攻略模塊增加《推圖地形壹覽》和《T圖地形壹覽》。（點擊地形可以看到地形DEBUFF和抗性推薦提示)\n
+7.增加自動更新功能（基於友盟，純手動）。\n
+\n\n
+
+【1.0.5】
+\n\n
+1.增加授勛系統\n
+2.鋼舞姬數量增加到當前版本數量（187位）。\n
+3.增加壹個彩蛋（請慢慢找，如果指揮官們能找到的話）\n
+4.啟動畫面更新。\n
+5.修復壹些小BUG\n
+\n\n
+【1.0.4】
+\n\n
+1.增加關閉所有頁面的功能\n
+2.修復壹些BUG\n
+\n
+【1.0.3】
+\n\n
+1.修復了屬性裏“偵察”不顯示的BUG\n
+2.修復了點攻略會閃退的BUG。
+\n\n
+【1.0.2】
+\n\n
+1.增加了官方攻略功能（和官網同步，該功能需要聯網）\n
+2.修復壹些BUG
+\n\n
+【1.0.1】
+\n\n
+1.修復壹些BUG
+\n\n
+
+【1.0.0】
+\n\n
+1.項目建立
+</item>
+    </string-array>
+
+</resources>

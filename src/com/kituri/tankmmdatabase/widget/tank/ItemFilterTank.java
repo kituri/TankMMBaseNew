@@ -1,32 +1,25 @@
 package com.kituri.tankmmdatabase.widget.tank;
 
-import android.content.Context;
-import android.graphics.Color;
-import android.graphics.PorterDuff.Mode;
-import android.graphics.drawable.Drawable;
-import android.util.AttributeSet;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.widget.ImageView;
-import android.widget.RelativeLayout;
-import android.widget.TextView;
-import android.widget.Toast;
-
 import com.kituri.app.data.Entry;
 import com.kituri.app.widget.Populatable;
 import com.kituri.app.widget.Selectable;
 import com.kituri.app.widget.SelectionListener;
 import com.kituri.tankmmdatabase.R;
-import com.kituri.tankmmdatabase.data.DataBaseCategoryData;
-import com.kituri.tankmmdatabase.data.tank.TankSearchData;
-import com.kituri.tankmmdatabase.data.tank.TankSearchResult;
-import com.kituri.tankmmdatabase.model.DataTypeTransformer;
+import com.kituri.tankmmdatabase.data.tank.TankSearchFilterItemData;
 import com.kituri.tankmmdatabase.model.Intent;
+
+import android.content.Context;
+import android.graphics.Rect;
+import android.util.AttributeSet;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 
 public class ItemFilterTank extends RelativeLayout implements Populatable<Entry>, Selectable<Entry>, View.OnClickListener {
 	
-	private TankSearchResult mData;
+	private TankSearchFilterItemData mData;
 	private SelectionListener<Entry> mListener;
 	
 	private TextView tv_name;
@@ -58,10 +51,10 @@ public class ItemFilterTank extends RelativeLayout implements Populatable<Entry>
 		tv_name.setOnClickListener(this);
 	}
 	
-	private void setData(TankSearchResult result) {
+	private void setData(TankSearchFilterItemData result) {
 		//tv_selected.setSelected(selected);
 		//TankSearchResult result = DataTypeTransformer.transform(getContext(), obj);
-		if(result.getSelect() == result.getQueryValue()){
+		if(result.getSelect() == result.getFilterValue()){
 			//tv_selected.setVisibility(View.VISIBLE);
 			tv_name.setSelected(true);
 		}else{
@@ -69,11 +62,12 @@ public class ItemFilterTank extends RelativeLayout implements Populatable<Entry>
 			tv_name.setSelected(false);
 		}
 		
-		tv_name.setText(result.getName());
-		if(result.getIconResId() != 0){
-			tv_name.setCompoundDrawables(null, getResources().getDrawable(result.getIconResId()), null, null);		
+		tv_name.setText(result.getFilterName());
+		if(result.getIcon() != 0){
+			//result.getIcon()
+			tv_name.setCompoundDrawablesWithIntrinsicBounds(getResources().getDrawable(result.getIcon()), null, null, null);		
 		}else{
-			tv_name.setCompoundDrawables(null, null, null, null);		
+			tv_name.setCompoundDrawablesWithIntrinsicBounds(null, null, null, null);		
 		}		
 	}
 	
@@ -101,7 +95,7 @@ public class ItemFilterTank extends RelativeLayout implements Populatable<Entry>
 		if (data == null) {
 			return;
 		}
-		mData = (TankSearchResult) data;
+		mData = (TankSearchFilterItemData) data;
 		setData(mData);
 	}
 
@@ -112,7 +106,7 @@ public class ItemFilterTank extends RelativeLayout implements Populatable<Entry>
 			return;
 		}		
 		mData.setIntent(new Intent(Intent.ACTION_CONDITIONAL_QUERY));
-		mData.setSelect(mData.getQueryValue());
+		mData.setSelect(mData.getFilterValue());
 		mListener.onSelectionChanged(mData, true);		
 	}	
 }

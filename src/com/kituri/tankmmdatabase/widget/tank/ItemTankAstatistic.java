@@ -59,6 +59,7 @@ public class ItemTankAstatistic extends RelativeLayout implements Populatable<En
 	}
 	
 	private void setData(TankStatisticData obj) {
+		tv_statistic.setText("");
 		if(obj.getValue() >= 0){
 			tv_statistic.setTextColor(Color.WHITE);
 		}else{
@@ -66,49 +67,76 @@ public class ItemTankAstatistic extends RelativeLayout implements Populatable<En
 		}
 		switch (obj.getStatistic()) {
 		case TankStatisticData.STATISTIC_ARMOUR:
-			tv_statistic.setText(String.format(getContext().getString(R.string.cap_tank_statistics_armour),
-					obj.getValue()));
+			if(obj.getValue() >= 0){
+				tv_statistic.setText(String.format(getContext().getString(R.string.cap_tank_statistics_armour),
+						obj.getValue()));
+			}
 			iv_statistic.setImageResource(R.drawable.icon_tank_statistics_armour);
 			break;
 		case TankStatisticData.STATISTIC_ARMOURPIERCING:
-			tv_statistic.setText(String.format(getContext().getString(R.string.cap_tank_statistics_armourpiercing),
-					obj.getValue()));
+			if(obj.getValue() >= 0){
+				tv_statistic.setText(String.format(getContext().getString(R.string.cap_tank_statistics_armourpiercing),
+						obj.getValue()));
+			}
 			iv_statistic.setImageResource(R.drawable.icon_tank_statistics_armourpiercing);
 			break;
 		case TankStatisticData.STATISTIC_DODGE:
-			tv_statistic.setText(String.format(getContext().getString(R.string.cap_tank_statistics_dodge),
-					obj.getValue()));
+			if(obj.getValue() >= 0){
+				tv_statistic.setText(String.format(getContext().getString(R.string.cap_tank_statistics_dodge),
+						obj.getValue()));
+			}
 			iv_statistic.setImageResource(R.drawable.icon_tank_statistics_dodge);
 			break;
 		case TankStatisticData.STATISTIC_DURABLE:
-			tv_statistic.setText(String.format(getContext().getString(R.string.cap_tank_statistics_durable),
-					obj.getValue()));
+			if(obj.getValue() >= 0){
+				tv_statistic.setText(String.format(getContext().getString(R.string.cap_tank_statistics_durable),
+						obj.getValue()));
+			}
 			iv_statistic.setImageResource(R.drawable.icon_tank_statistics_durable);
 			break;
 		case TankStatisticData.STATISTIC_FIRE:
-			tv_statistic.setText(String.format(getContext().getString(R.string.cap_tank_statistics_fire),
-					obj.getValue()));
+			if(obj.getValue() >= 0){
+				tv_statistic.setText(String.format(getContext().getString(R.string.cap_tank_statistics_fire),
+						obj.getValue()));
+			}
 			iv_statistic.setImageResource(R.drawable.icon_tank_statistics_fire);
 			break;
 		case TankStatisticData.STATISTIC_HIDE:
-			tv_statistic.setText(String.format(getContext().getString(R.string.cap_tank_statistics_hide),
-					obj.getValue()));
+			if(obj.getValue() >= 0){
+				tv_statistic.setText(String.format(getContext().getString(R.string.cap_tank_statistics_hide),
+						obj.getValue()));
+			}
 			iv_statistic.setImageResource(R.drawable.icon_tank_statistics_hide);
 			break;
 		case TankStatisticData.STATISTIC_HIT:
-			tv_statistic.setText(String.format(getContext().getString(R.string.cap_tank_statistics_hit),
-					obj.getValue()));
+			if(obj.getValue() >= 0){
+				tv_statistic.setText(String.format(getContext().getString(R.string.cap_tank_statistics_hit),
+						obj.getValue()));
+			}
 			iv_statistic.setImageResource(R.drawable.icon_tank_statistics_hit);
 			break;
 		case TankStatisticData.STATISTIC_RANGE:
-			tv_statistic.setText(String.format(getContext().getString(R.string.cap_tank_statistics_range),
-					obj.getValue()));
+			if(obj.getValue() >= 0){
+				tv_statistic.setText(String.format(getContext().getString(R.string.cap_tank_statistics_range),
+						obj.getValue()));
+			}
 			iv_statistic.setImageResource(R.drawable.icon_tank_statistics_range);
 			break;
 		case TankStatisticData.STATISTIC_SPOT:
-			tv_statistic.setText(String.format(getContext().getString(R.string.cap_tank_statistics_spot),
-					obj.getValue()));
-			iv_statistic.setImageResource(R.drawable.icon_tank_statistics_spot);
+			if(obj.getValue() > 0){
+				tv_statistic.setText(String.format(getContext().getString(R.string.cap_tank_statistics_spot),
+						obj.getValue()));
+			}
+			iv_statistic.setImageResource(R.drawable.icon_tank_statistics_spot);			
+			break;
+		case TankStatisticData.STATISTIC_CRITICAL:
+			iv_statistic.setImageResource(R.drawable.icon_tank_statistics_critical);
+			break;
+		case TankStatisticData.STATISTIC_INFLAMING_RETARDING:
+			iv_statistic.setImageResource(R.drawable.icon_tank_statistics_inflaming_retarding);
+			break;
+		case TankStatisticData.STATISTIC_DAMAGE:
+			iv_statistic.setImageResource(R.drawable.icon_tank_statistics_damage);
 			break;
 		default:
 			tv_statistic.setText("");

@@ -1,0 +1,171 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_centerInParent="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="4dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/bg_dialog_and_other"
+        android:orientation="vertical" >
+
+        <TextView
+            android:layout_marginTop="10dp"
+            android:id="@+id/tv_player_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textColor="@color/td_item_tank_name"
+            android:textSize="@dimen/tv_size_medium_big"
+            android:textStyle="bold" />
+
+                <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/cap_metaphysics_dialog_info"
+            android:textColor="@color/td_item_tank_name"
+            android:textSize="@dimen/tv_size_medium_big"
+            android:layout_marginBottom="10dp"
+            />
+        
+        <LinearLayout
+            android:id="@+id/linearLayout1"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/bg_tank_detai_title_info" >
+
+            <RelativeLayout
+                android:layout_width="105dp"
+                android:layout_height="match_parent"
+                android:layout_marginTop="4dp"
+                android:orientation="vertical" >
+
+                <ImageView
+                    android:id="@+id/iv_head"
+                    android:layout_width="105dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center_vertical"
+                    android:src="@null" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_below="@+id/iv_head"
+                    android:orientation="horizontal" >
+
+                    <ImageView
+                        android:id="@+id/iv_star_lv01"
+                        android:layout_width="10dp"
+                        android:layout_height="10dp"
+                        android:src="@drawable/icon_rank_star" />
+
+                    <ImageView
+                        android:id="@+id/iv_star_lv02"
+                        android:layout_width="10dp"
+                        android:layout_height="10dp"
+                        android:src="@drawable/icon_rank_star" />
+
+                    <ImageView
+                        android:id="@+id/iv_star_lv03"
+                        android:layout_width="10dp"
+                        android:layout_height="10dp"
+                        android:src="@drawable/icon_rank_star" />
+                </LinearLayout>
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:layout_weight="1"
+                android:orientation="horizontal" >
+
+                <ImageView
+                    android:id="@+id/iv_nationality"
+                    android:layout_width="34dp"
+                    android:layout_height="34dp"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/icon_tank_national_flag_01" />
+
+                <ImageView
+                    android:id="@+id/iv_type"
+                    android:layout_width="36dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="bottom"
+                    android:layout_marginLeft="8dp"
+                    android:src="@drawable/icon_tank_type_spg" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:layout_marginLeft="8dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:id="@+id/tv_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="莫夏·梅列茨安娜"
+                        android:textColor="@color/td_item_tank_name"
+                        android:textSize="@dimen/tv_size_small_sml"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_class"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="bottom"
+                        android:text="SU-8自行火炮"
+                        android:textColor="@android:color/white"
+                        android:textSize="@dimen/tv_size_medium_med"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginTop="30dp" >
+
+            <com.kituri.app.widget.XTextView
+                android:id="@+id/btn_ok"
+                android:layout_width="100dp"
+                android:layout_height="42dp"
+                android:layout_gravity="center"
+                android:background="@drawable/btn_blue_high_light"
+                android:gravity="center"
+                android:text="@string/cap_btn_ok"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/tv_size_medium_med" />
+
+            <com.kituri.app.widget.XTextView
+                android:id="@+id/btn_tank_detail"
+                android:layout_width="100dp"
+                android:layout_height="42dp"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:background="@drawable/btn_blue_high_light"
+                android:gravity="center"
+                android:text="@string/cap_metaphysics_btn_view_tank"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/tv_size_medium_med" />
+        </RelativeLayout>
+    </LinearLayout>
+
+</RelativeLayout>

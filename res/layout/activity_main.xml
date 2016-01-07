@@ -4,15 +4,29 @@
     android:layout_height="match_parent"
     android:orientation="vertical" >
 
-    <include layout="@layout/common_title_bar" />
+    <include
+        layout="@layout/common_title_bar" />
 
-    <ImageView
-        
-        android:id="@+id/imageView1"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:scaleType="fitXY"
-        android:src="@drawable/bk_test_banner" />
+        android:layout_height="wrap_content" >
+
+        <ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scaleType="fitXY"
+            android:src="@drawable/bk_banner" />
+
+        <com.kituri.app.widget.doubleClick.DoubleClickImageView
+            android:id="@+id/iv_eggs"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="57dp" />
+        
+    </RelativeLayout>
 
     <GridView
         android:id="@+id/gv_category"

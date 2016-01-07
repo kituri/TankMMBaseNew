@@ -28,6 +28,18 @@
             android:textColor="@color/td_highlight_text"
             android:textSize="@dimen/tv_size_medium_big"
             android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_lv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginRight="10dp"
+            android:gravity="right|center_vertical"
+            android:text="16"
+            android:textColor="@color/td_highlight_text"
+            android:textSize="@dimen/tv_size_medium_big"
+            android:textStyle="bold"
+            android:visibility="gone" />
     </com.kituri.app.widget.XRelativeLayout>
 
 </RelativeLayout>

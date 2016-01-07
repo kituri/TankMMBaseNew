@@ -16,12 +16,13 @@
         android:layout_height="@dimen/td_tank_list_item_height" >
 
         <ImageView
+            android:id="@+id/iv_head"
             android:layout_width="105dp"
             android:layout_height="30dp"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
-            android:src="@drawable/icon_tank_spg_su8" />
+            android:src="@null" />
 
         <ImageView
             android:id="@+id/iv_type"

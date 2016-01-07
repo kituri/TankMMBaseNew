@@ -22,17 +22,16 @@
 -->
 
 <resources>
-    
+
     <dimen name="actionbar_height">44dp</dimen>
     <dimen name="actionbar_item_height">44dp</dimen>
     <dimen name="actionbar_item_width">51dp</dimen>
     <dimen name="actionbar_content_padding">15dp</dimen>
-    
     <dimen name="sub_titlebar_height">44dp</dimen>
-    
+
     <!-- 字体采用dp设计，不采用sp设计保证不随系统分辨率和字体调整而调整 -->
     <!-- 字体大小 -->
-
+    <dimen name="tv_size_max">24dp</dimen>
     <dimen name="tv_size_largest">21dp</dimen>
     <dimen name="tv_size_large">19dp</dimen>
     <dimen name="tv_size_medium_big">17dp</dimen>
@@ -42,5 +41,5 @@
     <dimen name="tv_size_small_med">12dp</dimen>
     <dimen name="tv_size_small_med_sml">11dp</dimen>
     <dimen name="tv_size_small_sml">10dp</dimen>
-    
+
 </resources>

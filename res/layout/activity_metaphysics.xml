@@ -1,0 +1,89 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <include layout="@layout/common_title_bar" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_margin="4dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_weight="1"
+        android:background="@drawable/bg_dialog_and_other"
+        android:orientation="vertical" >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:gravity="center"
+            android:text="@string/cap_metaphysics_tip"
+            android:textColor="@color/td_highlight_text"
+            android:textSize="@dimen/tv_size_large"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:gravity="top"
+            android:text="@string/cap_metaphysics_info"
+            android:textColor="@color/td_highlight_text_direction"
+            android:textSize="@dimen/tv_size_medium_med" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:src="@drawable/icon_metaphysics" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+               >
+
+                <EditText
+                    android:id="@+id/et_name"
+                    android:background="@drawable/bg_edit_input"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:hint="@string/cap_metaphysics_input_your_name"
+                    android:inputType="text"
+                    android:textColor="@color/td_highlight_text"
+                    android:textSize="@dimen/tv_size_medium_big" >
+
+                    <requestFocus />
+                </EditText>
+
+            </RelativeLayout>
+        </LinearLayout>
+
+        <com.kituri.app.widget.XTextView
+            android:id="@+id/tv_get_tank"
+            android:layout_width="220dp"
+            android:layout_height="80dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="40dp"
+            android:background="@drawable/btn_blue_high_light_selector"
+            android:drawableLeft="@drawable/icon_metaphysics_01"
+            android:gravity="center"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:text="@string/cap_metaphysics_btn_get"
+            android:textColor="@color/td_highlight_text"
+            android:textSize="@dimen/tv_size_max"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+</LinearLayout>

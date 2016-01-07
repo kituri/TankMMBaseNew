@@ -79,6 +79,7 @@ public class EquipListActivity extends BaseActivity implements SelectionListener
 	}
 	
 	private void queryEquipList(EquipSearchData searchData) {
+		mAdapter.clear();
 		List<EquipData> list = EquipManager.conditionalQuery(searchData);
 		for (EquipData entry : list) {
 			entry.setViewName(ItemEquipList.class.getName());
@@ -100,7 +101,6 @@ public class EquipListActivity extends BaseActivity implements SelectionListener
 		}else if(action.equals(Intent.ACTION_CONDITIONAL_QUERY)){
 			mCustomDialog.dismiss();
 			mSearchData = (EquipSearchData)item;
-			mAdapter.clear();
 			setData(mSearchData);
 		}else if(action.equals(Intent.ACTION_DIALOG_DISMISS)){
 			mDetailDialog.dismiss();

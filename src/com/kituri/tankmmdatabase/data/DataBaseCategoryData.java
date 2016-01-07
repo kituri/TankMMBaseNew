@@ -13,17 +13,24 @@ public class DataBaseCategoryData extends Entry{
 	static public final int TYPE_TECHNOLOGY = 2;
 	static public final int TYPE_TANK = 3;
 	static public final int TYPE_DEVELOPMENT = 4;
-	static public final int TYPE_MAP = 5;	
-	static public final int TYPE_SKILL = 6;
+	static public final int TYPE_SETTING = 5;	
+	static public final int TYPE_TIPS = 6;
 	static public final int TYPE_QUEST = 7;
 	static public final int TYPE_METAPHYSICS = 8;
-	static public final int TYPE_SATELLITE = 9;
+	static public final int TYPE_SKILL = 9;
 	
 	private int type;
 	private String name;
 	private int resId;
 	private Boolean enabled;
+	private Boolean isBadger;
 	
+	public Boolean getIsBadger() {
+		return isBadger;
+	}
+	public void setIsBadger(Boolean isBadger) {
+		this.isBadger = isBadger;
+	}
 	public Boolean getEnabled() {
 		return enabled;
 	}

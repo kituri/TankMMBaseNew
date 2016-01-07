@@ -2,46 +2,29 @@ package com.kituri.tankmmdatabase.data.tech;
 
 import java.util.List;
 
-import com.kituri.app.data.Entry;
 import com.kituri.tankmmdatabase.data.tank.TankStatisticData;
 
 /**
  * 科技数据
  */
-public class TechData extends Entry{
+public class TechData extends TechTypeData{
 
 	private static final long serialVersionUID = 3672726097211956879L;
 	
-	/**
-	 * 主炮
-	 */
-	public static final int TYPE_MAIN_GUN = 0;
-	/**
-	 * 防护
-	 */
-	public static final int TYPE_SHIELD = 1;
-	/**
-	 * 车体
-	 */
-	public static final int TYPE_BODYWORK = 2;
-	/**
-	 * 引擎
-	 */
-	public static final int TYPE_ENGINE = 3;
-	/**
-	 * 索敌
-	 */
-	public static final int TYPE_SEEK = 4;
+	
 
 	//科技名字，例：被帽风帽偏重穿甲弹（中口径）
 	private String techName;
-	//allType，主炮、车身、引擎等
-	private int allType;
-	//type，AP、HE等
-	private int type;
-	private String icon;
+//	//allType，主炮、车身、引擎等
+//	private int allType;
+//	//type，AP、HE等
+//	private int type;
+	private String techIcon;
 	private int techId;
-
+	private int rank;
+	//置换费用(银币)
+	private int costMoney;
+	
 	//增加的属性 和 其值
 	private List<TankStatisticData> statisticDatas;
 	
@@ -77,27 +60,43 @@ public class TechData extends Entry{
 		this.techName = techName;
 	}
 	
-	public String getIcon() {
-		return icon;
+	public String getTechIcon() {
+		return techIcon;
 	}
 
-	public void setIcon(String icon) {
-		this.icon = icon;
+	public void setTechIcon(String icon) {
+		this.techIcon = icon;
+	}
+//	
+//	public int getAllType() {
+//		return allType;
+//	}
+//
+//	public void setAllType(int allType) {
+//		this.allType = allType;
+//	}
+//
+//	public int getType() {
+//		return type;
+//	}
+//
+//	public void setType(int type) {
+//		this.type = type;
+//	}
+//	
+	public int getRank() {
+		return rank;
+	}
+	public void setRank(int rank) {
+		this.rank = rank;
 	}
 	
-	public int getAllType() {
-		return allType;
-	}
 
-	public void setAllType(int allType) {
-		this.allType = allType;
+	public int getCostMoney() {
+		return costMoney;
 	}
-
-	public int getType() {
-		return type;
+	public void setCostMoney(int costMoney) {
+		this.costMoney = costMoney;
 	}
-
-	public void setType(int type) {
-		this.type = type;
-	}
+	
 }

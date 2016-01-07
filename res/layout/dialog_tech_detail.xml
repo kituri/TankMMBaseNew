@@ -3,21 +3,19 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
 
-    <TextView 
-            android:layout_width="match_parent"
-    android:layout_height="1dp" 
-        />
-    
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp" />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerInParent="true"
         android:layout_marginBottom="10dp"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         android:layout_marginTop="40dp"
-        android:layout_centerInParent="true"
-        android:layout_centerHorizontal="true"
-        
         android:background="@drawable/bg_dialog_and_other"
         android:orientation="vertical" >
 
@@ -30,20 +28,20 @@
                 android:layout_width="60dp"
                 android:layout_height="60dp" >
 
-                <com.kituri.app.widget.XRelativeLayout
+                <RelativeLayout
                     android:id="@+id/iv_icon"
                     android:layout_width="60dp"
                     android:layout_height="60dp"
                     android:layout_centerHorizontal="true"
-                    android:background="@drawable/bg_dialog_and_other" />
+                    android:background="@drawable/bg_tech_small" >
+                </RelativeLayout>
 
                 <ImageView
                     android:id="@+id/iv_tech"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:layout_alignTop="@+id/iv_icon"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_alignParentTop="true"
                     android:layout_centerHorizontal="true"
-                    android:layout_marginTop="8dp"
                     android:src="@drawable/icon_tech_00" />
 
                 <ImageView
@@ -53,21 +51,29 @@
                     android:layout_alignBottom="@+id/iv_icon"
                     android:layout_alignLeft="@+id/iv_icon"
                     android:layout_marginBottom="4dp"
-                    android:layout_marginLeft="4dp"
-                   />
+                    android:layout_marginLeft="4dp" />
+
+                <ImageView
+                    android:id="@+id/iv_rank_lv"
+                    android:layout_width="18dp"
+                    android:layout_height="12dp"
+                    android:layout_alignBottom="@+id/iv_icon"
+                    android:layout_alignRight="@+id/iv_icon"
+                    android:layout_marginBottom="4dp"
+                    android:src="@drawable/icon_rank_lv_01" />
             </RelativeLayout>
 
             <TextView
                 android:id="@+id/tv_name"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
+                android:layout_weight="1"
                 android:gravity="center_horizontal"
                 android:paddingTop="10dp"
                 android:text="改装火药"
-                android:layout_weight="1"
-                android:textStyle="bold"
                 android:textColor="@color/td_highlight_text"
-                android:textSize="@dimen/tv_size_medium_big" />
+                android:textSize="@dimen/tv_size_medium_big"
+                android:textStyle="bold" />
         </LinearLayout>
 
         <GridView
@@ -77,15 +83,14 @@
             android:layout_marginBottom="4dp"
             android:layout_marginLeft="4dp"
             android:layout_marginRight="4dp"
+            android:layout_weight="1"
             android:horizontalSpacing="1dp"
             android:numColumns="2"
             android:paddingBottom="4dp"
             android:paddingTop="4dp"
             android:scrollbars="none"
             android:stretchMode="columnWidth"
-            android:verticalSpacing="1dp" 
-            android:layout_weight="1"
-            />
+            android:verticalSpacing="1dp" />
 
         <TextView
             android:id="@+id/tv_special"
@@ -93,23 +98,43 @@
             android:layout_height="wrap_content"
             android:gravity="left|top"
             android:padding="4dp"
-            
             android:text="改装火药改装火药改装火药改装火药改装火药改装火药改装火药改装火药"
             android:textColor="@color/td_highlight_text_direction"
             android:textSize="@dimen/tv_size_medium_med" />
-        
-        <com.kituri.app.widget.XTextView 
-            android:id="@+id/btn_ok"
-            android:text="@string/cap_btn_ok"
-            android:textColor="@android:color/white"
-            android:layout_width="84dp"
-            android:layout_height="36dp"
-            android:gravity="center"
-            android:layout_gravity="center"
-            android:textSize="@dimen/tv_size_medium_med"
-            android:background="@drawable/btn_blue_high_light"
-            />
-        
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            >
+
+            <com.kituri.app.widget.XTextView
+                android:id="@+id/btn_ok"
+                android:layout_width="100dp"
+                android:layout_height="42dp"
+                android:layout_gravity="center"
+                android:background="@drawable/btn_blue_high_light"
+                android:gravity="center"
+                android:text="@string/cap_btn_ok"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/tv_size_medium_med" />
+
+                        <com.kituri.app.widget.XTextView
+                            android:id="@+id/btn_search_category"
+                            android:layout_width="100dp"
+                            android:layout_height="42dp"
+                            android:layout_alignParentRight="true"
+                            android:layout_alignParentTop="true"
+                            android:background="@drawable/btn_blue_high_light"
+                            android:gravity="center"
+                            android:text="@string/cap_btn_search_category"
+                            android:textColor="@android:color/white"
+                            android:textSize="@dimen/tv_size_medium_med" />
+            
+        </RelativeLayout>
     </LinearLayout>
 
 </RelativeLayout>

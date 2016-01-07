@@ -22,6 +22,14 @@ public class TechSpecialData extends Entry{
 		this.description = description;
 	}
 	
+	public TechSpecialData(String name, String description){
+		this(-1, name, description);
+	}
+	
+	public TechSpecialData(String name){
+		this(name, "");
+	}
+	
 	public int getId() {
 		return id;
 	}

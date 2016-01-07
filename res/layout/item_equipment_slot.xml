@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="40dp"
+    android:layout_height="40dp" >
+
+    <com.kituri.app.widget.XRelativeLayout
+        android:id="@+id/iv_icon"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/bg_dialog_and_other" >
+
+    </com.kituri.app.widget.XRelativeLayout>
+
+    <ImageView
+        android:id="@+id/iv_equip_type"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_alignTop="@+id/iv_icon"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="4dp"
+        android:src="@drawable/icon_equip_00" />
+
+    <TextView
+        android:id="@+id/tv_name"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/iv_icon"
+        android:gravity="top|center_horizontal"
+        android:singleLine="true"
+        android:text="改装火药"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/tv_size_small_sml" />
+
+</RelativeLayout>

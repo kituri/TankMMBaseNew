@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <include layout="@layout/common_title_bar" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/bg_dialog_and_other"
+        android:orientation="vertical" >
+
+        <ScrollView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/bg_tank_detai_title_info"
+                    android:gravity="center"
+                    android:text="@string/cap_choice_filter_type"
+                    android:textColor="@color/td_highlight_text"
+                    android:textSize="@dimen/tv_size_medium_big" />
+
+                <HorizontalScrollView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content" >
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="fill_parent" >
+
+                        <GridView
+                            android:id="@+id/gv_tank_type"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginBottom="4dp"
+                            android:layout_marginLeft="4dp"
+                            android:layout_marginRight="4dp"
+                            android:layout_weight="1"
+                            android:numColumns="auto_fit"
+                            android:paddingBottom="4dp"
+                            android:paddingTop="4dp"
+                            android:scrollbars="none"
+                            android:stretchMode="spacingWidthUniform" />
+                    </LinearLayout>
+                </HorizontalScrollView>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/bg_tank_detai_title_info"
+                    android:gravity="center"
+                    android:text="@string/cap_choice_filter_nationality"
+                    android:textColor="@color/td_highlight_text"
+                    android:textSize="@dimen/tv_size_medium_big" />
+
+                <HorizontalScrollView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content" >
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="fill_parent" >
+
+                        <GridView
+                            android:id="@+id/gv_tank_nationality"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginBottom="4dp"
+                            android:layout_marginLeft="4dp"
+                            android:layout_marginRight="4dp"
+                            android:layout_weight="1"
+                            android:numColumns="auto_fit"
+                            android:paddingBottom="4dp"
+                            android:paddingTop="4dp"
+                            android:scrollbars="none"
+                            android:stretchMode="spacingWidthUniform" />
+                    </LinearLayout>
+                </HorizontalScrollView>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/bg_tank_detai_title_info"
+                    android:gravity="center"
+                    android:text="@string/cap_choice_filter_star"
+                    android:textColor="@color/td_highlight_text"
+                    android:textSize="@dimen/tv_size_medium_big" />
+
+                <HorizontalScrollView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content" >
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="fill_parent" >
+
+                        <GridView
+                            android:id="@+id/gv_tank_star"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginBottom="4dp"
+                            android:layout_marginLeft="4dp"
+                            android:layout_marginRight="4dp"
+                            android:layout_weight="1"
+                            android:numColumns="auto_fit"
+                            android:paddingBottom="4dp"
+                            android:paddingTop="4dp"
+                            android:scrollbars="none"
+                            android:stretchMode="spacingWidthUniform" />
+                    </LinearLayout>
+                </HorizontalScrollView>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/bg_tank_detai_title_info"
+                    android:gravity="center"
+                    android:text="@string/cap_choice_filter_attribute"
+                    android:textColor="@color/td_highlight_text"
+                    android:textSize="@dimen/tv_size_medium_big" />
+
+                <HorizontalScrollView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content" >
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="fill_parent" >
+
+                        <GridView
+                            android:id="@+id/gv_tank_statistic"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginBottom="4dp"
+                            android:layout_marginLeft="4dp"
+                            android:layout_marginRight="4dp"
+                            android:layout_weight="1"
+                            android:numColumns="auto_fit"
+                            android:paddingBottom="4dp"
+                            android:paddingTop="4dp"
+                            android:scrollbars="none"
+                            android:stretchMode="spacingWidthUniform" />
+                    </LinearLayout>
+                </HorizontalScrollView>
+            </LinearLayout>
+        </ScrollView>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:orientation="horizontal" >
+
+            <com.kituri.app.widget.XTextView
+                android:id="@+id/tv_default"
+                android:layout_width="100dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="4dp"
+                android:layout_alignParentLeft="true"
+                android:background="@drawable/btn_blue_high_light_selector"
+                android:gravity="center"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:text="@string/cap_btn_default"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/tv_size_medium_big"
+                android:textStyle="bold" />
+
+            <com.kituri.app.widget.XTextView
+                android:id="@+id/tv_ok"
+                android:layout_width="100dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/btn_blue_high_light_selector"
+                android:gravity="center"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:text="@string/cap_btn_ok"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/tv_size_medium_big"
+                android:textStyle="bold" />
+        </RelativeLayout>
+    </LinearLayout>
+
+</LinearLayout>

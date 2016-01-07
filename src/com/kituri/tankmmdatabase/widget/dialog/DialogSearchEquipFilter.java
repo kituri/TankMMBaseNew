@@ -1,12 +1,5 @@
 package com.kituri.tankmmdatabase.widget.dialog;
 
-import android.content.Context;
-import android.util.AttributeSet;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.widget.RelativeLayout;
-import android.widget.RelativeLayout.LayoutParams;
-
 import com.kituri.app.controller.EntryAdapter;
 import com.kituri.app.data.Entry;
 import com.kituri.app.data.ListEntry;
@@ -14,12 +7,15 @@ import com.kituri.app.widget.Populatable;
 import com.kituri.app.widget.Selectable;
 import com.kituri.app.widget.SelectionListener;
 import com.kituri.tankmmdatabase.R;
-import com.kituri.tankmmdatabase.controller.TankManager;
-import com.kituri.tankmmdatabase.data.tank.TankFilterList;
 import com.kituri.tankmmdatabase.model.Intent;
 import com.kituri.tankmmdatabase.widget.GridViewWithHeaderAndFooter;
 import com.kituri.tankmmdatabase.widget.equip.ItemFilterEquip;
-import com.kituri.tankmmdatabase.widget.tank.ItemFilterTank;
+
+import android.content.Context;
+import android.util.AttributeSet;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.widget.RelativeLayout;
 
 public class DialogSearchEquipFilter extends RelativeLayout implements Selectable<Entry>, View.OnClickListener, SelectionListener<Entry>, Populatable<ListEntry>{
 
@@ -54,7 +50,6 @@ public class DialogSearchEquipFilter extends RelativeLayout implements Selectabl
 	}
 	
 	private void setData(ListEntry datas){
-		//m_if_all.populate(TankManager.getTankSearchResultForDialogAll(getContext(), datas));
 		mAdapter.clear();
 		for(Entry entry : datas.getEntries()){
 			entry.setViewName(ItemFilterEquip.class.getName());

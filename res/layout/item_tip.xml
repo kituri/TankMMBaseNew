@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" >
+
+    <com.kituri.app.widget.XRelativeLayout
+        android:id="@+id/v_bk"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/bg_dialog_and_other" >
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="改装火药"
+            android:textColor="@color/td_highlight_text"
+            android:textSize="@dimen/tv_size_medium_med"
+            android:textStyle="bold" />
+    </com.kituri.app.widget.XRelativeLayout>
+
+</RelativeLayout>

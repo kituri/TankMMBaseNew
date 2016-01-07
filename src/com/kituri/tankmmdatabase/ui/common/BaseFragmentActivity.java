@@ -1,17 +1,20 @@
 package com.kituri.tankmmdatabase.ui.common;
 
+import com.kituri.app.KituriApplication;
+import com.kituri.tankmmdatabase.KituriTankMMApplication;
+import com.kituri.tankmmdatabase.R;
+import com.kituri.tankmmdatabase.widget.ActionBar;
+
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.Window;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-
-import com.kituri.tankmmdatabase.R;
-import com.kituri.tankmmdatabase.widget.ActionBar;
 
 /**
  * Created by guanzhe on 14-10-15.
@@ -63,11 +66,29 @@ public abstract class BaseFragmentActivity extends com.kituri.app.ui.BaseFragmen
 		setContentView(mLayoutId);
 		// FinalActivity.initInjectedView(this);
 		// rootView = findViewById(mLayoutId);
+		showRightBtn(true);
+		findViewById(R.id.actionbar_btn_right).setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				KituriTankMMApplication.getInstance().closeActivity();
+			}
+		});
 		getData();// 这个要放在前面
 		initTitle();
-		initView();
+		initView();		
 	}
 
+	//默认是显示的
+	protected void showRightBtn(Boolean isShow) {
+		if(isShow){
+			findViewById(R.id.actionbar_right_bg).setVisibility(View.VISIBLE);
+		}else{
+			findViewById(R.id.actionbar_right_bg).setVisibility(View.GONE);
+		}
+	}
+	
 	/**
 	 * 获取从上个页面传递过来的数据，或者需要从本地读取的数据，如用户数据。
 	 */

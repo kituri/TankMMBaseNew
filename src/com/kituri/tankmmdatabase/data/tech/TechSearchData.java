@@ -12,9 +12,12 @@ public class TechSearchData extends Entry{
 	
 	private int select = TechData.TYPE_MAIN_GUN;
 	
-	//科技种类(主炮、车体、索敌等)
+	//小种类(轻甲、标甲等)
 	private int type;
 	
+	//科技种类(主炮、车体、索敌等)
+	private String typeName;
+
 	public int getType() {
 		return type;
 	}
@@ -31,7 +34,7 @@ public class TechSearchData extends Entry{
 		this.typeName = typeName;
 	}
 
-	private String typeName;
+	
 
 	public int getSelect() {
 		return select;
@@ -50,5 +53,6 @@ public class TechSearchData extends Entry{
 		this.type = type;
 		this.typeName = typeName;
 	}
+
 	
 }

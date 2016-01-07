@@ -1,5 +1,17 @@
 package com.kituri.tankmmdatabase.widget.dialog;
 
+import com.kituri.app.controller.EntryAdapter;
+import com.kituri.app.data.Entry;
+import com.kituri.app.widget.Populatable;
+import com.kituri.app.widget.Selectable;
+import com.kituri.app.widget.SelectionListener;
+import com.kituri.tankmmdatabase.R;
+import com.kituri.tankmmdatabase.data.equip.EquipData;
+import com.kituri.tankmmdatabase.data.equip.EquipSpecialData;
+import com.kituri.tankmmdatabase.data.tank.TankStatisticData;
+import com.kituri.tankmmdatabase.model.Intent;
+import com.kituri.tankmmdatabase.widget.tank.ItemTankAstatistic;
+
 import android.content.Context;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
@@ -8,22 +20,6 @@ import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-
-import com.kituri.app.controller.EntryAdapter;
-import com.kituri.app.data.Entry;
-import com.kituri.app.widget.Populatable;
-import com.kituri.app.widget.Selectable;
-import com.kituri.app.widget.SelectionListener;
-import com.kituri.tankmmdatabase.R;
-import com.kituri.tankmmdatabase.controller.TankManager;
-import com.kituri.tankmmdatabase.data.equip.EquipData;
-import com.kituri.tankmmdatabase.data.equip.EquipSpecialData;
-import com.kituri.tankmmdatabase.data.tank.TankFilterList;
-import com.kituri.tankmmdatabase.data.tank.TankStatisticData;
-import com.kituri.tankmmdatabase.model.Intent;
-import com.kituri.tankmmdatabase.widget.GridViewWithHeaderAndFooter;
-import com.kituri.tankmmdatabase.widget.tank.ItemFilterTank;
-import com.kituri.tankmmdatabase.widget.tank.ItemTankAstatistic;
 
 public class DialogEquipDetail extends RelativeLayout implements Selectable<Entry>, View.OnClickListener, SelectionListener<Entry>, Populatable<EquipData>{
 

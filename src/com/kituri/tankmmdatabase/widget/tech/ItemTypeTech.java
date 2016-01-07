@@ -26,6 +26,7 @@ public class ItemTypeTech extends RelativeLayout implements Populatable<Entry>, 
 	
 	private ImageView iv_tech_type;
 	private TextView tv_name;
+	private TextView tv_lv;
 	
 	public ItemTypeTech(Context context) {
 		this(context, null);
@@ -48,6 +49,7 @@ public class ItemTypeTech extends RelativeLayout implements Populatable<Entry>, 
 				inflate(R.layout.item_tech_list, null);
 		iv_tech_type =  (ImageView) convertView.findViewById(R.id.iv_tech_type);
 		tv_name = (TextView) convertView.findViewById(R.id.tv_name);
+		tv_lv = (TextView) convertView.findViewById(R.id.tv_lv);
 		this.addView(convertView, new LayoutParams(LayoutParams.MATCH_PARENT,
 				LayoutParams.WRAP_CONTENT));
 		setOnClickListener(null);
@@ -59,6 +61,12 @@ public class ItemTypeTech extends RelativeLayout implements Populatable<Entry>, 
 		iv_tech_type.setImageResource(getContext().getResources().
 				getIdentifier(data.getIcon(), "drawable", getContext().getPackageName()));
 		tv_name.setText(data.getTypeName());
+		if(data.getAllLv() >= 0){
+			tv_lv.setVisibility(View.VISIBLE);
+			tv_lv.setText(String.valueOf(data.getAllLv()));
+		}else{
+			tv_lv.setVisibility(View.GONE);
+		}
 	}
 	
 	@Override

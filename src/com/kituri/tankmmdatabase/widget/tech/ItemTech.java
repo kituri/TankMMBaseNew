@@ -1,6 +1,10 @@
 package com.kituri.tankmmdatabase.widget.tech;
 
 import android.content.Context;
+import android.graphics.Color;
+import android.graphics.PorterDuff.Mode;
+import android.graphics.drawable.Drawable;
+import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,6 +21,7 @@ import com.kituri.tankmmdatabase.data.tech.TechData;
 import com.kituri.tankmmdatabase.data.tech.TechTypeData;
 import com.kituri.tankmmdatabase.model.Intent;
 import com.kituri.tankmmdatabase.utils.TransformerUtils;
+import com.kituri.tankmmdatabase.utils.Utils;
 
 
 public class ItemTech extends RelativeLayout implements Populatable<Entry>, Selectable<Entry>, View.OnClickListener {
@@ -52,8 +57,8 @@ public class ItemTech extends RelativeLayout implements Populatable<Entry>, Sele
 		//tv_name = (TextView) convertView.findViewById(R.id.tv_name);
 		this.addView(convertView, new LayoutParams(LayoutParams.MATCH_PARENT,
 				LayoutParams.WRAP_CONTENT));
-		setOnClickListener(null);
-		convertView.findViewById(R.id.v_bk).setOnClickListener(this);
+		iv_tech.setOnClickListener(this);
+		//convertView.findViewById(R.id.v_bk).setOnClickListener(this);
 	}
 	
 	private void setData(TechData data) {
@@ -62,9 +67,17 @@ public class ItemTech extends RelativeLayout implements Populatable<Entry>, Sele
 			v_bk.setBackgroundDrawable(null);
 			iv_tech.setImageDrawable(null);
 		}else{
-			v_bk.setBackgroundResource(R.drawable.bg_dialog_and_other);
-			iv_tech.setImageResource(getContext().getResources().getIdentifier(data.getIcon(),
-					"drawable", getContext().getPackageName()));
+			if(data.getIsSelect()){
+				v_bk.setBackgroundResource(R.drawable.icon_tech_high_light);
+			}else{
+				v_bk.setBackgroundResource(R.drawable.bg_tech_small);
+			}
+			if(TextUtils.isEmpty(data.getTechIcon())){
+				iv_tech.setImageResource(getContext().getResources().getIdentifier(data.getIcon(),
+						"drawable", getContext().getPackageName()));
+			}else{
+				Utils.setAssetsImage(getContext(), data.getTechIcon(), iv_tech);
+			}
 		}
 		
 		

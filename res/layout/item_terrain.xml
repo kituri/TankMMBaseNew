@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <com.kituri.app.widget.XImageView
+        android:id="@+id/iv_terrain"
+        android:layout_width="74dp"
+        android:layout_height="74dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true" />
+
+    <GridView
+        android:id="@+id/gv_statistics"
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:layout_alignLeft="@+id/iv_terrain"
+        android:layout_alignRight="@+id/iv_terrain"
+        android:layout_below="@+id/iv_terrain"
+        android:horizontalSpacing="1dp"
+        android:numColumns="3"
+        android:scrollbars="none"
+        android:stretchMode="columnWidth"
+        android:verticalSpacing="1dp" >
+    </GridView>
+
+</RelativeLayout>

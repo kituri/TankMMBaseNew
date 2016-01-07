@@ -1,5 +1,7 @@
 package com.kituri.tankmmdatabase.data.tank;
 
+import java.util.ArrayList;
+
 import com.kituri.app.data.Entry;
 
 /**
@@ -35,6 +37,7 @@ public class TankData extends Entry{
 	private String tankClass;
 	private String tankName;
 	private String tankNationality;
+	private int tankNationalityValue;
 	private int tankStar;
 	private int tankFire;
 	private int tankArmourPiercing;
@@ -48,12 +51,27 @@ public class TankData extends Entry{
 	private String tankEquipmentSlots;
 	private String tankAcqierement;
 	private String tankEngine;
-	private String tankBodywork;
+	//车身
+	private ArrayList<String> tankBodywork;
 	//防护
-	private String tankShield;
-	//子弹
-	private String tankBullet;
+	private ArrayList<String> tankShield;
+	//炮塔
+	private ArrayList<String> tankTurrets;
+	//头像
+	private String headPic;
+	//live2d
+	private String live2d;
+	//年龄
+	private String age;
+	//介绍
+	private String profiles;
 	
+	public String getHeadPic() {
+		return headPic;
+	}
+	public void setHeadPic(String headPic) {
+		this.headPic = headPic;
+	}
 	public String getTankAcqierement() {
 		return tankAcqierement;
 	}
@@ -66,10 +84,10 @@ public class TankData extends Entry{
 	public void setTankEngine(String tankEngine) {
 		this.tankEngine = tankEngine;
 	}
-	public String getTankBodywork() {
+	public ArrayList<String> getTankBodywork() {
 		return tankBodywork;
 	}
-	public void setTankBodywork(String tankBodywork) {
+	public void setTankBodywork(ArrayList<String> tankBodywork) {
 		this.tankBodywork = tankBodywork;
 	}
 	public int getTankType() {
@@ -162,16 +180,46 @@ public class TankData extends Entry{
 	public void setTankEquipmentSlots(String tankEquipmentSlots) {
 		this.tankEquipmentSlots = tankEquipmentSlots;
 	}
-	public String getTankShield() {
+	public ArrayList<String> getTankShield() {
 		return tankShield;
 	}
-	public void setTankShield(String tankShield) {
+	public void setTankShield(ArrayList<String> tankShield) {
 		this.tankShield = tankShield;
 	}
-	public String getTankBullet() {
-		return tankBullet;
+	public ArrayList<String> getTankTurrets() {
+		return tankTurrets;
 	}
-	public void setTankBullet(String tankBullet) {
-		this.tankBullet = tankBullet;
+	public void setTankTurrets(ArrayList<String> tankTurrets) {
+		this.tankTurrets = tankTurrets;
+	}
+	public int getTankNationalityValue() {
+		return tankNationalityValue;
+	}
+	public void setTankNationalityValue(int tankNationalityValue) {
+		this.tankNationalityValue = tankNationalityValue;
+	}	
+	public String getLive2d() {
+		return live2d;
+	}
+	public void setLive2d(String live2d) {
+		this.live2d = live2d;
+	}
+	public String getAge() {
+		return age;
+	}
+	public void setAge(String age) {
+		this.age = age;
+	}
+	public String getProfiles() {
+		return profiles;
+	}
+	public void setProfiles(String profiles) {
+		this.profiles = profiles;
+	}
+	
+	@Override
+	public long entryCompare() {
+		// TODO Auto-generated method stub
+		return getTankType();
 	}
 }

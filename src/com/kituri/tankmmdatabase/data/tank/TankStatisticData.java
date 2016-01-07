@@ -21,6 +21,11 @@ public class TankStatisticData extends Entry{
 	static public final int STATISTIC_HIDE = 6;
 	static public final int STATISTIC_SPOT = 7;
 	static public final int STATISTIC_RANGE = 8;
+	static public final int STATISTIC_CRITICAL = 9;
+	static public final int STATISTIC_DAMAGE = 10;
+	static public final int STATISTIC_INFLAMING_RETARDING = 11;
+	
+	static public final int STATISTIC_VALUE_NULL = -1;
 	
 	private int statistic;
 	private int value;

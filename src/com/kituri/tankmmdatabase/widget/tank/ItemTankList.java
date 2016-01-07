@@ -16,6 +16,7 @@ import com.kituri.tankmmdatabase.R;
 import com.kituri.tankmmdatabase.data.tank.TankData;
 import com.kituri.tankmmdatabase.model.Intent;
 import com.kituri.tankmmdatabase.utils.TransformerUtils;
+import com.kituri.tankmmdatabase.utils.Utils;
 
 
 public class ItemTankList extends RelativeLayout implements Populatable<Entry>, Selectable<Entry>, View.OnClickListener {
@@ -25,6 +26,7 @@ public class ItemTankList extends RelativeLayout implements Populatable<Entry>, 
 	private View v_star_lv;
 	private ImageView iv_type;
 	private TextView tv_class;
+	private ImageView iv_head;
 	//private ImageView iv_star_lv01;
 	private ImageView iv_star_lv02;
 	private ImageView iv_star_lv03;
@@ -52,6 +54,7 @@ public class ItemTankList extends RelativeLayout implements Populatable<Entry>, 
 		v_star_lv = convertView.findViewById(R.id.v_star_lv);
 		iv_type = (ImageView) convertView.findViewById(R.id.iv_type);
 		tv_class = (TextView) convertView.findViewById(R.id.tv_class);
+		iv_head = (ImageView) convertView.findViewById(R.id.iv_head);
 		//iv_star_lv01 = (ImageView) convertView.findViewById(R.id.iv_star_lv01);
 		iv_star_lv02 = (ImageView) convertView.findViewById(R.id.iv_star_lv02);
 		iv_star_lv03 = (ImageView) convertView.findViewById(R.id.iv_star_lv03);
@@ -86,7 +89,8 @@ public class ItemTankList extends RelativeLayout implements Populatable<Entry>, 
 			iv_star_lv03.setVisibility(View.INVISIBLE);	
 			break;
 		}
-
+		Utils.setAssetsImage(getContext(), obj.getHeadPic(), iv_head);
+		
 	}
 	
 	@Override

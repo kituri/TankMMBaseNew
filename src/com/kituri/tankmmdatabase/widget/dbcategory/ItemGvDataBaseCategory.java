@@ -27,6 +27,7 @@ public class ItemGvDataBaseCategory extends RelativeLayout implements Populatabl
 	private SelectionListener<Entry> mListener;
 	
 	private ImageView iv_logo;
+	private ImageView iv_badger;
 	private TextView tv_name;
 	
 	public ItemGvDataBaseCategory(Context context) {
@@ -50,6 +51,7 @@ public class ItemGvDataBaseCategory extends RelativeLayout implements Populatabl
 				inflate(R.layout.item_gv_database_category, null);
 		iv_logo = (ImageView) convertView.findViewById(R.id.iv_logo);
 		tv_name =  (TextView) convertView.findViewById(R.id.tv_name);
+		iv_badger = (ImageView) convertView.findViewById(R.id.iv_badger);
 		this.addView(convertView, new LayoutParams(LayoutParams.MATCH_PARENT,
 				LayoutParams.MATCH_PARENT));
 		this.setOnClickListener(this);
@@ -62,12 +64,18 @@ public class ItemGvDataBaseCategory extends RelativeLayout implements Populatabl
 		if (drawable == null){
 			return;
 		}
+		if(obj.getIsBadger()){
+			iv_badger.setVisibility(View.VISIBLE);
+		}else{
+			iv_badger.setVisibility(View.GONE);
+		}
 		if(obj.getEnabled()){
 			drawable.clearColorFilter();
 			iv_logo.setImageDrawable(drawable);
 		}else{
 			drawable.setColorFilter(Color.argb(180, 0, 0, 0), Mode.DARKEN); // 此处值可自行调整
 			iv_logo.setImageDrawable(drawable);
+			iv_badger.setVisibility(View.GONE);
 		}
 	}
 	
