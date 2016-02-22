@@ -112,7 +112,7 @@ public class TechDataBase extends Entry {
 		public static final int ALL[] = {COMPREHENSIVE_SEEK};
 		public static final String ALL_STRING[] = KituriTankMMApplication.getInstance().
 				getResources().getStringArray(R.array.tech_manager_seek_all_string);
-		public static final String ALL_ICONS[] = {"icon_empty"};
+		public static final String ALL_ICONS[] = {"icon_tech_seek"};
 	}
 	
 	public interface TECH_TYPE_MAINGUN_AP{

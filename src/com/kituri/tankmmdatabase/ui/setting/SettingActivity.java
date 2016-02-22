@@ -1,47 +1,37 @@
 package com.kituri.tankmmdatabase.ui.setting;
 
 import com.kituri.app.data.Entry;
+import com.kituri.app.ui.BaseFragmentActivity;
 import com.kituri.app.widget.SelectionListener;
 import com.kituri.app.widget.dialog.CustomDialog;
 import com.kituri.tankmmdatabase.R;
 import com.kituri.tankmmdatabase.model.Intent;
-import com.kituri.tankmmdatabase.ui.common.BaseActivity;
 import com.kituri.tankmmdatabase.utils.Utils;
 import com.kituri.tankmmdatabase.widget.TankToggleButton;
 import com.kituri.tankmmdatabase.widget.dialog.DialogVerUpdateHistory;
+import com.kituri.app.model.JsonModel;
 import com.umeng.update.UmengUpdateListener;
 import com.umeng.update.UpdateResponse;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
-
 import android.net.Uri;
+import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Toast;
 
 
 
-public class SettingActivity extends BaseActivity implements OnClickListener, SelectionListener<Entry>{
+public class SettingActivity extends BaseFragmentActivity implements OnClickListener, SelectionListener<Entry>{
 
 	static public final String LIVE2D_SETUP_TOOL_URL = "http://pan.baidu.com/s/1sk2WguL";
 	static public final String TAG_DECORATED_MODE = "DECORATED_MODE";
 	
 	private CustomDialog mDetailDialog;
-	
-	public SettingActivity() {
-		super(R.layout.activity_setting);
-		// TODO Auto-generated constructor stub
-	}
 
 	@Override
-	protected void getData() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	protected void initView() {
+	public void initView() {
 		// TODO Auto-generated method stub
 		setTitle(R.string.cap_database_category_setting);
 		setHomeAction(false);
@@ -140,6 +130,24 @@ public class SettingActivity extends BaseActivity implements OnClickListener, Se
 		if(action.equals(Intent.ACTION_DIALOG_DISMISS)){
 			mDetailDialog.dismiss();
 		}
+	}
+
+	@Override
+	public int getLayoutID() {
+		// TODO Auto-generated method stub
+		return R.layout.activity_setting;
+	}
+
+	@Override
+	public void initDataBundle(Bundle bundle) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	protected JsonModel initJsonModel() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 	
 }

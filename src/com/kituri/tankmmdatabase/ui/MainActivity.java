@@ -4,12 +4,11 @@ import java.util.List;
 
 import com.kituri.app.controller.EntryAdapter;
 import com.kituri.app.data.Entry;
+import com.kituri.app.model.JsonModel;
 import com.kituri.app.push.PsPushUserData;
-
+import com.kituri.app.ui.BaseFragmentActivity;
 import com.kituri.app.widget.SelectionListener;
 import com.kituri.app.widget.dialog.CustomDialog;
-import com.kituri.app.widget.doubleClick.DoubleClickImageView;
-import com.kituri.app.widget.doubleClick.OnDoubleClickListener;
 import com.kituri.tankmmdatabase.KituriTankMMApplication;
 import com.kituri.tankmmdatabase.R;
 import com.kituri.tankmmdatabase.controller.DataBaseCategoryManager;
@@ -17,23 +16,16 @@ import com.kituri.tankmmdatabase.data.DataBaseCategoryData;
 import com.kituri.tankmmdatabase.data.tech.TechData;
 import com.kituri.tankmmdatabase.data.tech.TechSearchData;
 import com.kituri.tankmmdatabase.model.Intent;
-import com.kituri.tankmmdatabase.ui.common.BaseActivity;
 import com.kituri.tankmmdatabase.utils.Utils;
 import com.kituri.tankmmdatabase.widget.dbcategory.ItemGvDataBaseCategory;
 import com.kituri.tankmmdatabase.widget.dialog.DialogVerUpdateHistory;
-import com.umeng.update.UmengUpdateAgent;
 import com.umeng.update.UmengUpdateListener;
 import com.umeng.update.UpdateResponse;
 
-import android.app.AlertDialog;
-import android.content.DialogInterface;
-
-import android.net.Uri;
-import android.view.View;
+import android.os.Bundle;
 import android.widget.GridView;
-import android.widget.Toast;
 
-public class MainActivity extends BaseActivity implements SelectionListener<Entry>{
+public class MainActivity extends BaseFragmentActivity implements SelectionListener<Entry>{
 
 	static public final String TAG_SHOW_VER_UPDATE_HISTORY = "TAG_SHOW_VER_UPDATE_HISTORY";
 
@@ -41,26 +33,25 @@ public class MainActivity extends BaseActivity implements SelectionListener<Entr
 	private EntryAdapter mAdapter;
 
 	private CustomDialog mDetailDialog;
-	
-	
-	public MainActivity() {
-		super(R.layout.activity_main);
-		// TODO Auto-generated constructor stub
+
+	@Override
+	public int getLayoutID() {
+		return R.layout.activity_main;
 	}
 	
 	@Override
-	protected void getData() {
+	public void initDataBundle(Bundle bundle) {
 		// TODO Auto-generated method stub
-
+		
 	}
-
+	
 	@Override
-	protected void initView() {
+	public void initView() {
 		// TODO Auto-generated method stub
 		KituriTankMMApplication.getInstance().setLoft(MainActivity.this);
 		setTitle(getString(R.string.app_name));
 		setHomeAction(true);
-		showRightBtn(false);
+		//showRightBtn(false);
 		gv_category = (GridView) findViewById(R.id.gv_category);
 		mAdapter = new EntryAdapter(this);
 		gv_category.setAdapter(mAdapter);
@@ -75,8 +66,8 @@ public class MainActivity extends BaseActivity implements SelectionListener<Entr
 	}
 	
 	private void initData() {		
-		if(PsPushUserData.getData(this, TAG_SHOW_VER_UPDATE_HISTORY, true)){
-			PsPushUserData.setData(this, TAG_SHOW_VER_UPDATE_HISTORY, false);
+		if(PsPushUserData.getData(this, TAG_SHOW_VER_UPDATE_HISTORY + Utils.getVersion(this), true)){
+			PsPushUserData.setData(this, TAG_SHOW_VER_UPDATE_HISTORY + Utils.getVersion(this), false);
 			openVerUpdateHistory();
 		}
 		initCategoryGridView();
@@ -155,6 +146,14 @@ public class MainActivity extends BaseActivity implements SelectionListener<Entr
 		default:
 			break;
 		}
+	}
+
+
+
+	@Override
+	protected JsonModel initJsonModel() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

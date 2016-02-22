@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.kituri.app.controller.EntryAdapter;
 import com.kituri.app.data.Entry;
+import com.kituri.app.ui.BaseFragmentActivity;
 import com.kituri.app.widget.SelectionListener;
 import com.kituri.app.widget.dialog.CustomDialog;
 import com.kituri.tankmmdatabase.KituriTankMMApplication;
@@ -12,21 +13,17 @@ import com.kituri.tankmmdatabase.controller.TechManager;
 import com.kituri.tankmmdatabase.data.tech.TechSearchData;
 import com.kituri.tankmmdatabase.data.tech.TechTypeData;
 import com.kituri.tankmmdatabase.model.Intent;
-import com.kituri.tankmmdatabase.ui.common.BaseActivity;
 import com.kituri.tankmmdatabase.widget.dialog.DialogTechTypeFilter;
 import com.kituri.tankmmdatabase.widget.tech.ItemTypeTech;
+import com.kituri.app.model.JsonModel;
 
+import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.ListView;
 import android.widget.TextView;
 
-public class TechListActivity extends BaseActivity implements SelectionListener<Entry>, OnClickListener {
-
-	public TechListActivity() {
-		super(R.layout.activity_tech_type_list);
-		// TODO Auto-generated constructor stub
-	}
+public class TechListActivity extends BaseFragmentActivity implements SelectionListener<Entry>, OnClickListener {
 
 	private ListView lv_tech_list;
 	private TextView tv_search;
@@ -36,14 +33,9 @@ public class TechListActivity extends BaseActivity implements SelectionListener<
 	private EntryAdapter mAdapter;
 	private TechSearchData mSearchData;
 
-	@Override
-	protected void getData() {
-		// TODO Auto-generated method stub
-		mSearchData = (TechSearchData) getIntent().getSerializableExtra(Intent.EXTRA_TECH_SEARCH_DATA);
-	}
 
 	@Override
-	protected void initView() {
+	public void initView() {
 		// TODO Auto-generated method stub
 		setTitle(R.string.cap_tech_list_title);
 		setHomeAction(false);
@@ -120,4 +112,22 @@ public class TechListActivity extends BaseActivity implements SelectionListener<
 		}
 	}
 
+	@Override
+	public int getLayoutID() {
+		// TODO Auto-generated method stub
+		return R.layout.activity_tech_type_list;
+	}
+
+	@Override
+	public void initDataBundle(Bundle bundle) {
+		// TODO Auto-generated method stub
+		mSearchData = (TechSearchData) bundle.getSerializable(Intent.EXTRA_TECH_SEARCH_DATA);
+	}
+
+	@Override
+	protected JsonModel initJsonModel() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
 }

@@ -30,6 +30,7 @@ public class Intent extends com.kituri.app.model.Intent {
 	public static final String EXTRA_TECH_PAGE_DATA = "com.kituri.app.intent.extra.tech.page.data";
 	
 	public static final String EXTRA_TIP = "com.kituri.app.intent.extra.tip";
+	public static final String EXTRA_BOOLEAN_IS_SHARE = "com.kituri.app.intent.extra.boolean.is.share";
 	
 	// 跳转Action
 	public static final String ACTION_DATABASE_CATEGORY = "com.kituri.app.intent.database.category";

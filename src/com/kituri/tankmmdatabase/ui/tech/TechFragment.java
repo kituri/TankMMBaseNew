@@ -1,16 +1,20 @@
 package com.kituri.tankmmdatabase.ui.tech;
 
+import android.os.Bundle;
+import android.view.View;
 import android.widget.GridView;
 
 import com.kituri.app.controller.EntryAdapter;
 import com.kituri.app.data.Entry;
+import com.kituri.app.ui.BaseFragment;
 import com.kituri.app.widget.Selectable;
 import com.kituri.app.widget.SelectionListener;
 import com.kituri.tankmmdatabase.R;
 import com.kituri.tankmmdatabase.data.tech.TechPageData;
 import com.kituri.tankmmdatabase.model.Intent;
-import com.kituri.tankmmdatabase.ui.common.BaseFragment;
+
 import com.kituri.tankmmdatabase.widget.tech.ItemTech;
+import com.kituri.app.model.JsonModel;
 
 public class TechFragment extends BaseFragment implements Selectable<Entry>, SelectionListener<Entry>{
 
@@ -20,13 +24,10 @@ public class TechFragment extends BaseFragment implements Selectable<Entry>, Sel
 	
 	private SelectionListener<Entry> mListener;
 	
-	public TechFragment() {
-		super(R.layout.fragment_tech);
-		// TODO Auto-generated constructor stub
-	}
+
 
 	@Override
-	protected void initView() {
+	public void initView() {
 		// TODO Auto-generated method stub
 		gv_tech = (GridView) findViewById(R.id.gv_tech);		
 		mAdapter = new EntryAdapter(getActivity());
@@ -74,6 +75,36 @@ public class TechFragment extends BaseFragment implements Selectable<Entry>, Sel
 				mListener.onSelectionChanged(item, true);
 			}
 		}
+	}
+
+	@Override
+	public int getLayoutID() {
+		// TODO Auto-generated method stub
+		return R.layout.fragment_tech;
+	}
+
+	@Override
+	public void initDataBundle(Bundle bundle) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public String getName() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	protected JsonModel initJsonModel() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void onClick(View view) {
+		// TODO Auto-generated method stub
+		
 	}
 	
 }

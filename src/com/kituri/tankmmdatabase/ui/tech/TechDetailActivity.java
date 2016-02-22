@@ -2,18 +2,8 @@ package com.kituri.tankmmdatabase.ui.tech;
 
 import java.util.List;
 
-import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentStatePagerAdapter;
-import android.support.v4.view.ViewPager;
-import android.support.v4.view.ViewPager.OnPageChangeListener;
-import android.view.View;
-import android.view.View.OnClickListener;
-import android.view.ViewGroup;
-import android.widget.ImageView;
-
 import com.kituri.app.data.Entry;
+import com.kituri.app.ui.BaseFragmentActivity;
 import com.kituri.app.widget.Selectable;
 import com.kituri.app.widget.SelectionListener;
 import com.kituri.app.widget.dialog.CustomDialog;
@@ -25,10 +15,21 @@ import com.kituri.tankmmdatabase.data.tech.TechData;
 import com.kituri.tankmmdatabase.data.tech.TechPageData;
 import com.kituri.tankmmdatabase.data.tech.TechTypeData;
 import com.kituri.tankmmdatabase.model.Intent;
-import com.kituri.tankmmdatabase.ui.common.BaseActivity;
 import com.kituri.tankmmdatabase.widget.dialog.DialogTechDetail;
+import com.kituri.app.model.JsonModel;
 
-public class TechDetailActivity extends BaseActivity implements OnClickListener, OnPageChangeListener, SelectionListener<Entry> {
+import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentStatePagerAdapter;
+import android.support.v4.view.ViewPager;
+import android.support.v4.view.ViewPager.OnPageChangeListener;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.view.ViewGroup;
+import android.widget.ImageView;
+
+public class TechDetailActivity extends BaseFragmentActivity implements OnClickListener, OnPageChangeListener, SelectionListener<Entry> {
 
 	private TechTypeData mTechTypeData;
 	private ViewPager vp_tech;
@@ -43,21 +44,10 @@ public class TechDetailActivity extends BaseActivity implements OnClickListener,
 	
 	private CustomDialog mDetailDialog;
 	private DialogTechDetail mDialogTechDetail;
-	
-	public TechDetailActivity() {
-		super(R.layout.activity_tech_detail);
-		// TODO Auto-generated constructor stub
-	}
 
 
 	@Override
-	protected void getData() {
-		// TODO Auto-generated method stub
-		mTechTypeData = (TechTypeData) getIntent().getSerializableExtra(Intent.EXTRA_TECH_TYPE_DATA);
-	}
-
-	@Override
-	protected void initView() {
+	public void initView() {
 		// TODO Auto-generated method stub
 		setTitle(mTechTypeData.getTypeName());
 		iv_rank_lv_01 = (ImageView) findViewById(R.id.iv_rank_lv_01);
@@ -307,5 +297,28 @@ public class TechDetailActivity extends BaseActivity implements OnClickListener,
 			KituriTankMMApplication.gotoTankList(this, searchData);
 		}
 	}
+
+
+	@Override
+	public int getLayoutID() {
+		// TODO Auto-generated method stub
+		return R.layout.activity_tech_detail;
+	}
+
+
+	@Override
+	public void initDataBundle(Bundle bundle) {
+		// TODO Auto-generated method stub
+		mTechTypeData = (TechTypeData) bundle.getSerializable(Intent.EXTRA_TECH_TYPE_DATA);
+
+	}
+
+
+	@Override
+	protected JsonModel initJsonModel() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 	
 }

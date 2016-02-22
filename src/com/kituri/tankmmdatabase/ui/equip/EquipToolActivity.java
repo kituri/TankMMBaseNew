@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import com.kituri.app.controller.EntryAdapter;
 import com.kituri.app.data.Entry;
 import com.kituri.app.push.PsPushUserData;
+import com.kituri.app.ui.BaseFragmentActivity;
 import com.kituri.app.widget.SelectionListener;
 import com.kituri.app.widget.dialog.CustomDialog;
 import com.kituri.tankmmdatabase.R;
@@ -12,21 +13,21 @@ import com.kituri.tankmmdatabase.controller.EquipManager;
 import com.kituri.tankmmdatabase.data.equip.EquipAllCostData;
 import com.kituri.tankmmdatabase.data.equip.EquipCountData;
 import com.kituri.tankmmdatabase.model.Intent;
-import com.kituri.tankmmdatabase.ui.common.BaseActivity;
 import com.kituri.tankmmdatabase.widget.TankToggleButton;
 import com.kituri.tankmmdatabase.widget.dialog.DialogEquipTool;
 import com.kituri.tankmmdatabase.widget.dialog.DialogInputNumber;
 import com.kituri.tankmmdatabase.widget.equip.ItemEquipCount;
+import com.kituri.app.model.JsonModel;
 
+import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 //装备升级小工具
-public class EquipToolActivity extends BaseActivity implements SelectionListener<Entry>, OnClickListener{
+public class EquipToolActivity extends BaseFragmentActivity implements SelectionListener<Entry>, OnClickListener{
 	
 	static public String TAG_EQUIP_COUNT = "tag_equip_count";
 	
@@ -56,19 +57,8 @@ public class EquipToolActivity extends BaseActivity implements SelectionListener
 	
 	private static final String TAG_TOGGLE_BUTTON_MODE = "TAG_TOGGLE_BUTTON_MODE";
 	
-	public EquipToolActivity() {
-		super(R.layout.activity_tip_equip_tool);
-		// TODO Auto-generated constructor stub
-	}
-
 	@Override
-	protected void getData() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	protected void initView() {
+	public void initView() {
 		// TODO Auto-generated method stub
 		setTitle(R.string.cap_equip_tools);
 		setHomeAction(false);
@@ -235,6 +225,24 @@ public class EquipToolActivity extends BaseActivity implements SelectionListener
 		default:
 			break;
 		}
+	}
+
+	@Override
+	public int getLayoutID() {
+		// TODO Auto-generated method stub
+		return R.layout.activity_tip_equip_tool;
+	}
+
+	@Override
+	public void initDataBundle(Bundle bundle) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	protected JsonModel initJsonModel() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	

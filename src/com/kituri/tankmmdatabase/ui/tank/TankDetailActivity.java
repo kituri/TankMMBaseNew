@@ -5,6 +5,7 @@ import java.util.List;
 import com.kituri.app.controller.EntryAdapter;
 import com.kituri.app.data.Entry;
 import com.kituri.app.data.ListEntry;
+import com.kituri.app.ui.BaseFragmentActivity;
 import com.kituri.app.widget.SelectionListener;
 import com.kituri.app.widget.dialog.CustomDialog;
 import com.kituri.tankmmdatabase.KituriTankMMApplication;
@@ -15,7 +16,6 @@ import com.kituri.tankmmdatabase.controller.EngineManager;
 import com.kituri.tankmmdatabase.controller.ShieldManager;
 import com.kituri.tankmmdatabase.controller.TankManager;
 import com.kituri.tankmmdatabase.data.equip.EquipData;
-import com.kituri.tankmmdatabase.data.equip.EquipSearchData;
 import com.kituri.tankmmdatabase.data.tank.TankData;
 import com.kituri.tankmmdatabase.data.tank.TankDataBase;
 import com.kituri.tankmmdatabase.data.tank.TankStatisticData;
@@ -24,13 +24,14 @@ import com.kituri.tankmmdatabase.data.tech.EngineTechData;
 import com.kituri.tankmmdatabase.data.tech.TechData;
 import com.kituri.tankmmdatabase.data.tech.TechSpecialData;
 import com.kituri.tankmmdatabase.model.Intent;
-import com.kituri.tankmmdatabase.ui.common.BaseActivity;
 import com.kituri.tankmmdatabase.utils.TransformerUtils;
 import com.kituri.tankmmdatabase.utils.Utils;
 import com.kituri.tankmmdatabase.widget.dialog.DialogTechFilter;
 import com.kituri.tankmmdatabase.widget.tank.ItemEquipmentSlot;
 import com.kituri.tankmmdatabase.widget.tank.ItemTankAstatistic;
+import com.kituri.app.model.JsonModel;
 
+import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -39,7 +40,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class TankDetailActivity extends BaseActivity implements SelectionListener<Entry>, OnClickListener {
+public class TankDetailActivity extends BaseFragmentActivity implements SelectionListener<Entry>, OnClickListener {
 
 	private TankData mTankData;
 	
@@ -53,6 +54,7 @@ public class TankDetailActivity extends BaseActivity implements SelectionListene
 	private TextView tv_engine;
 	private TextView tv_bodywork;
 	private ImageView iv_head;
+	private TextView tv_drop;
 	
 	private View rl_engine_check;
 	private View rl_shield_check;
@@ -64,7 +66,7 @@ public class TankDetailActivity extends BaseActivity implements SelectionListene
 	
 	private ImageView iv_shield_check;
 	
-	private View ll_other_detail;
+	private View ll_other_detail_01;
 	private TextView tv_profiles;
 	private ImageView iv_live2d;
 	
@@ -73,21 +75,9 @@ public class TankDetailActivity extends BaseActivity implements SelectionListene
 	
 	private CustomDialog mTechFilter;
 	private DialogTechFilter mDialogTechFilter;
-	
-	public TankDetailActivity() {
-		super(R.layout.activity_tank_detail);
-		// TODO Auto-generated constructor stub
-	}
-
 
 	@Override
-	protected void getData() {
-		// TODO Auto-generated method stub
-		mTankData = (TankData) ((TankData) getIntent().getSerializableExtra(Intent.EXTRA_TANK_DATA)).clone();
-	}
-
-	@Override
-	protected void initView() {
+	public void initView() {
 		// TODO Auto-generated method stub
 		setTitle(R.string.cap_tank_detail_title);
 		iv_nationality = (ImageView) findViewById(R.id.iv_nationality);
@@ -107,8 +97,10 @@ public class TankDetailActivity extends BaseActivity implements SelectionListene
 		iv_shield_check = (ImageView) findViewById(R.id.iv_shield_check);
 		iv_head = (ImageView) findViewById(R.id.iv_head);
 		tv_profiles = (TextView) findViewById(R.id.tv_profiles);
-		ll_other_detail = findViewById(R.id.ll_other_detail);
+		ll_other_detail_01 = findViewById(R.id.ll_other_detail_01);
 		iv_live2d = (ImageView) findViewById(R.id.iv_live2d);	
+		findViewById(R.id.ll_btn_bar).setVisibility(View.VISIBLE);
+		tv_drop = (TextView) findViewById(R.id.tv_drop);
 		
 		gv_statistics = (GridView) findViewById(R.id.gv_statistics);
 
@@ -212,17 +204,27 @@ public class TankDetailActivity extends BaseActivity implements SelectionListene
 //		tv_bodywork.setText(String.format(getString(R.string.cap_tank_statistics_bodywork) ,
 //				data.getTankBodywork()));
 		if(TextUtils.isEmpty(data.getProfiles()) && TextUtils.isEmpty(data.getLive2d())){
-			ll_other_detail.setVisibility(View.GONE);
+			ll_other_detail_01.setVisibility(View.GONE);
 		}else{
-			ll_other_detail.setVisibility(View.VISIBLE);
-			tv_profiles.setText(data.getProfiles());
+			ll_other_detail_01.setVisibility(View.VISIBLE);
+			if(TextUtils.isEmpty(data.getAge())){
+				tv_profiles.setText(data.getProfiles());
+			}else{
+				tv_profiles.setText(String.format(getString(R.string.cap_tank_age), data.getAge())
+						+ "\n" + data.getProfiles());
+			}
+			
 			if(TextUtils.isEmpty(data.getLive2d())){
 				iv_live2d.setVisibility(View.GONE);
 			}else{
 				iv_live2d.setVisibility(View.VISIBLE);
 			}
 		}
-		
+		if(TextUtils.isEmpty(data.getDrop())){
+			tv_drop.setVisibility(View.GONE);
+		}else{
+			tv_drop.setText(String.format(getString(R.string.cap_tank_drop), data.getDrop()));
+		}
 	}
 
 	
@@ -303,6 +305,28 @@ public class TankDetailActivity extends BaseActivity implements SelectionListene
 		default:
 			break;
 		}
+	}
+
+
+	@Override
+	public int getLayoutID() {
+		// TODO Auto-generated method stub
+		return R.layout.activity_tank_detail;
+	}
+
+
+	@Override
+	public void initDataBundle(Bundle bundle) {
+		// TODO Auto-generated method stub
+		mTankData = (TankData) ((TankData) bundle.getSerializable(Intent.EXTRA_TANK_DATA)).clone();
+
+	}
+
+
+	@Override
+	protected JsonModel initJsonModel() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 	
 }

@@ -5,6 +5,7 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 
 import com.kituri.app.model.MyAsyncTask;
+import com.kituri.app.ui.BaseFragmentActivity;
 import com.kituri.app.widget.dialog.CustomDialog;
 import com.kituri.net.http.HttpMethod;
 import com.kituri.net.http.HttpUtility;
@@ -12,9 +13,10 @@ import com.kituri.net.http.error.KituriException;
 import com.kituri.tankmmdatabase.R;
 import com.kituri.tankmmdatabase.data.tip.Tip;
 import com.kituri.tankmmdatabase.model.Intent;
-import com.kituri.tankmmdatabase.ui.common.BaseActivity;
+import com.kituri.app.model.JsonModel;
 
 import android.annotation.SuppressLint;
+import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.webkit.WebSettings;
@@ -22,12 +24,9 @@ import android.webkit.WebSettings.LayoutAlgorithm;
 import android.webkit.WebView;
 import android.widget.TextView;
 
-public class StrategyDetailActivity extends BaseActivity {
+public class StrategyDetailActivity extends BaseFragmentActivity {
 
-	public StrategyDetailActivity() {
-		super(R.layout.activity_strategy_detail);
-		// TODO Auto-generated constructor stub
-	}
+
 
 	private CustomDialog mLoadingDialog;
 	private WebView wv_show;
@@ -35,15 +34,9 @@ public class StrategyDetailActivity extends BaseActivity {
 	private Tip tip;
 	private TipsWorkerTask mTipsWorkerTask;
 
-	@Override
-	protected void getData() {
-		// TODO Auto-generated method stub
-		tip = (Tip) getIntent().getSerializableExtra(Intent.EXTRA_TIP);
-	}
-
 	@SuppressLint("NewApi")
 	@Override
-	protected void initView() {
+	public void initView() {
 		// TODO Auto-generated method stub
 
 		setHomeAction(false);
@@ -168,6 +161,22 @@ public class StrategyDetailActivity extends BaseActivity {
 		}
 	}
 
-	
+	@Override
+	public int getLayoutID() {
+		// TODO Auto-generated method stub
+		return R.layout.activity_strategy_detail;
+	}
+
+	@Override
+	public void initDataBundle(Bundle bundle) {
+		// TODO Auto-generated method stub
+		tip = (Tip) bundle.getSerializable(Intent.EXTRA_TIP);
+	}
+
+	@Override
+	protected JsonModel initJsonModel() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	
 }

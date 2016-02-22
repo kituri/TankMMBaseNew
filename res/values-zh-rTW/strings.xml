@@ -21,7 +21,7 @@
     <string name="msg_max_star_mode_on_detail">【%1$s】授勛成功！</string>
     <string name="msg_input_is_nothing">親愛的指揮官閣下，請認真填寫資料喲。</string>
     <string name="msg_opeartion_is_ok">操作成功！</string>
-    <string name="msg_tech_btn_share_title">指揮官 %s 的科技為：</string>
+    <string name="msg_tech_btn_share_title">指揮官【%s】的科技為：</string>
     <string name="msg_share_subject">分享</string>
     <string name="msg_share_title">分享自《鋼舞姬圖書館》</string>
     <string name="cap_et_input_your_counts">點擊這裏輸入數量</string>
@@ -105,5 +105,14 @@
     <string name="cap_setting_live2d_setup_tool">安裝Live2D資源</string>
     <string name="cap_setting_ver_update_history">版本更新歷史</string>
     <string name="cap_setting_ver_update">版本更新</string>
-
+    <string name="cap_tank_age">年齡：%1$s</string>
+    <string name="cap_tank_drop">掉落：%1$s</string>
+        <string name="tech_main_gun_all">主炮 ：　　</string>
+    <string name="tech_shield_all">防護：　　</string>
+    <string name="tech_bodywork_all">綜合車體：</string>
+    <string name="tech_engine_all">綜合引擎：</string>
+    <string name="tech_seek_all">綜合索敵：</string>
+    <string name="msg_share_success">分享成功！</string>
+        <string name="cap_terrain_activity">活動地形壹覽</string>
+    <string name="cap_terrain_raid">突襲地形壹覽</string>
 </resources>

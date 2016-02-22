@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.kituri.app.controller.EntryAdapter;
 import com.kituri.app.data.Entry;
+import com.kituri.app.ui.BaseFragmentActivity;
 import com.kituri.app.widget.SelectionListener;
 import com.kituri.tankmmdatabase.KituriTankMMApplication;
 import com.kituri.tankmmdatabase.R;
@@ -12,8 +13,8 @@ import com.kituri.tankmmdatabase.data.tank.TankData;
 import com.kituri.tankmmdatabase.data.tank.TankDataBase;
 import com.kituri.tankmmdatabase.data.tank.TankSearchFilterData;
 import com.kituri.tankmmdatabase.model.Intent;
-import com.kituri.tankmmdatabase.ui.common.BaseActivity;
 import com.kituri.tankmmdatabase.widget.tank.ItemTankList;
+import com.kituri.app.model.JsonModel;
 
 import android.os.Bundle;
 import android.view.View;
@@ -22,14 +23,9 @@ import android.widget.GridView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class TankListActivity extends BaseActivity implements SelectionListener<Entry>, OnClickListener {
+public class TankListActivity extends BaseFragmentActivity implements SelectionListener<Entry>, OnClickListener {
 
 	static public final int FILTER_RESULT_CODE = 111;
-
-	public TankListActivity() {
-		super(R.layout.activity_tank_list);
-		// TODO Auto-generated constructor stub
-	}
 
 	private GridView gv_tank_list;
 	private TextView tv_search;
@@ -42,17 +38,7 @@ public class TankListActivity extends BaseActivity implements SelectionListener<
 	// private TankSearchData mSearchData;
 
 	@Override
-	protected void getData() {
-		// TODO Auto-generated method stub
-		// mSearchData = (TankSearchData)
-		mFilterData = (TankSearchFilterData) getIntent().getSerializableExtra(Intent.EXTRA_TANK_SEARCH_DATA);
-		if(mFilterData == null){
-			mFilterData = new TankSearchFilterData();
-		}		
-	}
-
-	@Override
-	protected void initView() {
+	public void initView() {
 		// TODO Auto-generated method stub
 		setTitle(R.string.cap_tank_list_title);
 		setHomeAction(false);
@@ -153,16 +139,24 @@ public class TankListActivity extends BaseActivity implements SelectionListener<
 		}
 	}
 
-	
-	
-//	@Override
-//	protected void onNewIntent(android.content.Intent intent) {
-//	        super.onNewIntent(intent);
-//	        if(intent.getSerializableExtra(Intent.EXTRA_TANK_SEARCH_DATA) != null){
-//				mFilterData = (TankSearchFilterData) intent.
-//						getSerializableExtra(Intent.EXTRA_TANK_SEARCH_DATA);
-//				setData(mFilterData);
-//			}
-//	    }
-	
+	@Override
+	public int getLayoutID() {
+		// TODO Auto-generated method stub
+		return R.layout.activity_tank_list;
+	}
+
+	@Override
+	public void initDataBundle(Bundle bundle) {
+		// TODO Auto-generated method stub
+		mFilterData = (TankSearchFilterData) bundle.getSerializable(Intent.EXTRA_TANK_SEARCH_DATA);
+		if(mFilterData == null){
+			mFilterData = new TankSearchFilterData();
+		}	
+	}
+
+	@Override
+	protected JsonModel initJsonModel() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

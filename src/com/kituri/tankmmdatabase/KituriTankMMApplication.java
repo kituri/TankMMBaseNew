@@ -33,6 +33,7 @@ import com.kituri.tankmmdatabase.ui.tank.TankLive2DActivity;
 import com.kituri.tankmmdatabase.ui.tech.TechDetailActivity;
 import com.kituri.tankmmdatabase.ui.tech.TechEmuActivity;
 import com.kituri.tankmmdatabase.ui.tech.TechListActivity;
+import com.kituri.tankmmdatabase.ui.tech.TechShareActivity;
 import com.kituri.tankmmdatabase.ui.tip.OfficialStrategyActivity;
 import com.kituri.tankmmdatabase.ui.tip.StrategyDetailActivity;
 import com.kituri.tankmmdatabase.ui.tip.TerrainActivity;
@@ -159,6 +160,22 @@ public class KituriTankMMApplication<MainActivity> extends KituriApplication{
 		context.startActivity(intent);
 	}
 	
+	public static void gotoTerrainActivity(Context context) {
+		// TODO Auto-generated method stub
+		Intent intent = new Intent(context, TerrainActivity.class);		
+		intent.putExtra(com.kituri.tankmmdatabase.model.Intent.EXTRA_TERRAIN_LIST,
+				TipManager.getTerrainsActivity(context));
+		context.startActivity(intent);
+	}
+	
+	public static void gotoTerrainRaid(Context context) {
+		// TODO Auto-generated method stub
+		Intent intent = new Intent(context, TerrainActivity.class);		
+		intent.putExtra(com.kituri.tankmmdatabase.model.Intent.EXTRA_TERRAIN_LIST,
+				TipManager.getTerrainsRaid(context));
+		context.startActivity(intent);
+	}
+	
 	public static void gotoTerrain(Context context, TankData data) {
 		// TODO Auto-generated method stub
 		Intent intent = new Intent(context, TerrainActivity.class);	
@@ -170,7 +187,7 @@ public class KituriTankMMApplication<MainActivity> extends KituriApplication{
 		// TODO Auto-generated method stub
 		Intent intent = new Intent(context, TerrainActivity.class);	
 		intent.putExtra(com.kituri.tankmmdatabase.model.Intent.EXTRA_TERRAIN_LIST,
-				TipManager.getSpStrategyTerrains(context));
+				TipManager.getTerrainsSPStrategy(context));
 		context.startActivity(intent);
 	}
 	
@@ -185,6 +202,14 @@ public class KituriTankMMApplication<MainActivity> extends KituriApplication{
 		Intent intent = new Intent(context, TechEmuActivity.class);		
 		intent.putExtra(com.kituri.tankmmdatabase.model.Intent.EXTRA_TECH_SEARCH_DATA,
 				new TechSearchData(TechData.TYPE_MAIN_GUN));
+		context.startActivity(intent);
+	}
+	
+	public static void gotoTechShare(Context context, Boolean isShare) {
+		// TODO Auto-generated method stub
+		Intent intent = new Intent(context, TechShareActivity.class);	
+		intent.putExtra(com.kituri.tankmmdatabase.model.Intent.EXTRA_BOOLEAN_IS_SHARE,
+				isShare);
 		context.startActivity(intent);
 	}
 	
@@ -211,6 +236,8 @@ public class KituriTankMMApplication<MainActivity> extends KituriApplication{
 		TechManager.init(this);
 		TipManager.init(this);
 //		FileUtils.test();
+//		MUtils.change(this, "msta.csv");
+//		MUtils.change(this, "mstr.csv");
 //		MUtils.reSave(this, "tm.krw");
 //		MUtils.change(this, "terrain_test.csv");
 //		MUtils.change(this, "map_sp_strategy_terrain.krw");

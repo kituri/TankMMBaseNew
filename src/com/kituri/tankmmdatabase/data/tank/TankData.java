@@ -65,7 +65,15 @@ public class TankData extends Entry{
 	private String age;
 	//介绍
 	private String profiles;
+	//掉落
+	private String drop;
 	
+	public String getDrop() {
+		return drop;
+	}
+	public void setDrop(String drop) {
+		this.drop = drop;
+	}
 	public String getHeadPic() {
 		return headPic;
 	}

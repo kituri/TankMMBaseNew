@@ -1,42 +1,11 @@
 package com.kituri.tankmmdatabase.ui.tip;
 
-import java.io.ByteArrayInputStream;
-import java.io.UnsupportedEncodingException;
-import java.net.URLDecoder;
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
 
-import android.app.Dialog;
-import android.text.Html;
-import android.text.TextUtils;
-import android.util.Log;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.View.OnClickListener;
-import android.webkit.WebView;
-import android.widget.Adapter;
-import android.widget.ImageView;
-import android.widget.ListView;
-import android.widget.ProgressBar;
-import android.widget.TextView;
-import android.widget.Toast;
-
-import com.kituri.app.KituriApplication;
 import com.kituri.app.controller.EntryAdapter;
 import com.kituri.app.data.Entry;
-import com.kituri.app.model.KituriToast;
 import com.kituri.app.model.MyAsyncTask;
-import com.kituri.app.model.asyncdrawable.TaskCache;
-import com.kituri.app.ui.detailphotoview.PicSimpleBitmapWorkerTask;
-import com.kituri.app.utils.FileDownloaderHttpHelper;
-import com.kituri.app.utils.FileManager;
-import com.kituri.app.utils.ImageUtility;
-import com.kituri.app.utils.PhotoUtils;
-import com.kituri.app.utils.FileManager.FileLocationMethod;
-import com.kituri.app.utils.PhotoUtils.Photoable;
-import com.kituri.app.utils.Utility;
-import com.kituri.app.widget.CircleProgressView;
+import com.kituri.app.ui.BaseFragmentActivity;
 import com.kituri.app.widget.SelectionListener;
 import com.kituri.app.widget.dialog.CustomDialog;
 import com.kituri.net.http.HttpMethod;
@@ -44,25 +13,21 @@ import com.kituri.net.http.HttpUtility;
 import com.kituri.net.http.error.KituriException;
 import com.kituri.tankmmdatabase.KituriTankMMApplication;
 import com.kituri.tankmmdatabase.R;
-import com.kituri.tankmmdatabase.controller.TechManager;
-import com.kituri.tankmmdatabase.data.tech.TechSearchData;
-import com.kituri.tankmmdatabase.data.tech.TechTypeData;
 import com.kituri.tankmmdatabase.data.tip.Tip;
 import com.kituri.tankmmdatabase.model.Intent;
-import com.kituri.tankmmdatabase.ui.common.BaseActivity;
 import com.kituri.tankmmdatabase.utils.TipsUtils;
-import com.kituri.tankmmdatabase.widget.dialog.DialogTechFilter;
-import com.kituri.tankmmdatabase.widget.tech.ItemTypeTech;
 import com.kituri.tankmmdatabase.widget.tip.ItemTip;
+import com.kituri.app.model.JsonModel;
 
-public class OfficialStrategyActivity extends BaseActivity implements SelectionListener<Entry> {
+import android.os.Bundle;
+import android.text.TextUtils;
+import android.view.LayoutInflater;
+import android.widget.ListView;
+import android.widget.Toast;
+
+public class OfficialStrategyActivity extends BaseFragmentActivity implements SelectionListener<Entry> {
 
 	private final String tipsUrl = "http://news.tankmm.com/html/mw/html/mw_info/";
-	
-	public OfficialStrategyActivity() {
-		super(R.layout.activity_official_strategy);
-		// TODO Auto-generated constructor stub
-	}
 
 	private ListView lv_tips;
 	private EntryAdapter mAdapter;
@@ -70,12 +35,7 @@ public class OfficialStrategyActivity extends BaseActivity implements SelectionL
 	private TipsWorkerTask mTipsWorkerTask;
 
 	@Override
-	protected void getData() {
-		// TODO Auto-generated method stub
-	}
-
-	@Override
-	protected void initView() {
+	public void initView() {
 		// TODO Auto-generated method stub
 		setTitle(R.string.cap_official_strategy_title);
 		setHomeAction(false);
@@ -174,6 +134,24 @@ public class OfficialStrategyActivity extends BaseActivity implements SelectionL
 	    	}
 	    	loadingView.dismiss();
 	    }
+	}
+
+	@Override
+	public int getLayoutID() {
+		// TODO Auto-generated method stub
+		return R.layout.activity_official_strategy;
+	}
+
+	@Override
+	public void initDataBundle(Bundle bundle) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	protected JsonModel initJsonModel() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 	
 }

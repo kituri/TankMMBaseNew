@@ -1,0 +1,204 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <include layout="@layout/common_title_bar" />
+
+    <LinearLayout
+        android:id="@+id/ll_root"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="4dp"
+        android:background="@drawable/bg_dialog_and_other"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:id="@+id/linearLayout1"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/bg_tank_detai_title_info" >
+
+            <ImageView
+                android:id="@+id/iv_head"
+                android:layout_width="105dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/icon_share_head_02" />
+
+            <TextView
+                android:id="@+id/tv_name"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="莫夏·梅列茨安娜"
+                android:textColor="@color/td_item_tank_name"
+                android:textSize="@dimen/tv_size_medium_sml"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp" >
+
+                    <TextView
+                        android:id="@+id/tv_main_gun_all"
+                        style="@style/style_tv_statistic"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:text="@string/tech_main_gun_all" />
+
+                    <GridView
+                        android:id="@+id/gv_main_gun"
+                        android:layout_width="180dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_toRightOf="@+id/tv_main_gun_all"
+                        android:horizontalSpacing="1dp"
+                        android:numColumns="4"
+                        android:stretchMode="columnWidth"
+                        android:verticalSpacing="1dp" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp" >
+
+                    <TextView
+                        android:id="@+id/tv_shield_all"
+                        style="@style/style_tv_statistic"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginTop="10dp"
+                        android:text="@string/tech_shield_all" />
+
+                    <GridView
+                        android:id="@+id/gv_shield"
+                        android:layout_width="180dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="2dp"
+                        android:layout_toRightOf="@+id/tv_shield_all"
+                        android:horizontalSpacing="1dp"
+                        android:numColumns="4"
+                        android:stretchMode="columnWidth"
+                        android:verticalSpacing="1dp" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp" >
+
+                    <TextView
+                        android:id="@+id/tv_bodywork_all"
+                        style="@style/style_tv_statistic"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginTop="10dp"
+                        android:text="@string/tech_bodywork_all" />
+
+                    <GridView
+                        android:id="@+id/gv_bodywork"
+                        android:layout_width="180dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="2dp"
+                        android:layout_toRightOf="@+id/tv_bodywork_all"
+                        android:horizontalSpacing="1dp"
+                        android:numColumns="4"
+                        android:stretchMode="columnWidth"
+                        android:verticalSpacing="1dp" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp" >
+
+                    <TextView
+                        android:id="@+id/tv_engine_all"
+                        style="@style/style_tv_statistic"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginTop="10dp"
+                        android:text="@string/tech_engine_all" />
+
+                    <GridView
+                        android:id="@+id/gv_engine"
+                        android:layout_width="180dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="2dp"
+                        android:layout_toRightOf="@+id/tv_engine_all"
+                        android:horizontalSpacing="1dp"
+                        android:numColumns="4"
+                        android:stretchMode="columnWidth"
+                        android:verticalSpacing="1dp" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp" >
+
+                    <TextView
+                        android:id="@+id/tv_seek_all"
+                        style="@style/style_tv_statistic"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginTop="10dp"
+                        android:text="@string/tech_seek_all" />
+
+                    <GridView
+                        android:id="@+id/gv_seek"
+                        android:layout_width="180dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="2dp"
+                        android:layout_toRightOf="@+id/tv_seek_all"
+                        android:horizontalSpacing="1dp"
+                        android:numColumns="4"
+                        android:stretchMode="columnWidth"
+                        android:verticalSpacing="1dp" />
+                </RelativeLayout>
+                
+                <TextView
+                    android:layout_marginTop="4dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical|right"
+                    android:text="@string/msg_share_title"
+                    android:textColor="@color/td_item_tank_name"
+                    android:textSize="@dimen/tv_size_medium_sml"
+                    android:textStyle="bold" />
+                
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

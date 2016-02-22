@@ -29,9 +29,10 @@
     <string name="msg_max_star_mode_on_detail">【%1$s】授勋成功！</string>
     <string name="msg_input_is_nothing">亲爱的指挥官阁下，请认真填写资料哟。</string>
     <string name="msg_opeartion_is_ok">操作成功！</string>
-    <string name="msg_tech_btn_share_title">指挥官 %s 的科技为：</string>
+    <string name="msg_tech_btn_share_title">指挥官【%s】的科技为：</string>
     <string name="msg_share_subject">分享</string>
     <string name="msg_share_title">分享来自《钢舞姬图书馆》</string>
+    <string name="msg_share_success">分享成功！</string>
     <string name="cap_et_input_your_counts">点击这里输入数量</string>
     <string name="cap_et_input_your_lv">输入装备级别</string>
     <string name="cap_btn_close">关闭</string>
@@ -40,7 +41,7 @@
     <string name="cap_btn_default">默认</string>
     <string name="cap_toggle_button_open">开启</string>
     <string name="cap_toggle_button_close">关闭</string>
-    
+
     <!-- 钢舞姬查询和相关页面 -->
 
     <string name="cap_tank_list_title">钢舞姬查询</string>
@@ -74,7 +75,9 @@
     <string name="cap_tank_check_bodywork">查看车体：</string>
     <string name="cap_tank_skill_bodywork">车体特性：</string>
     <string name="cap_dialog_selected">当前</string>
-
+    <string name="cap_tank_age">年龄：%1$s</string>
+    <string name="cap_tank_drop">掉落：%1$s</string>
+    
     <!-- 装备页 -->
     <string name="cap_equip_list_title">装备</string>
     <string name="cap_equip_sp_name">[%1$s]</string>
@@ -88,9 +91,9 @@
     <string name="cap_equip_tools">装备升级成本计算器（新）</string>
     <string name="cap_existing_equip">现有装备数量：</string>
     <string name="cap_create_equip_lv">制作装备级别：</string>
-     <string name="cap_create_equip_count">制作装备数量：</string>
+    <string name="cap_create_equip_count">制作装备数量：</string>
     <string name="cap_dialog_create_equip_title_nor">制作%1$d个【S%2$d】普通装备</string>
-     <string name="cap_dialog_create_equip_title_sp">制作%1$d个【S%2$d】特殊装备</string>
+    <string name="cap_dialog_create_equip_title_sp">制作%1$d个【S%2$d】特殊装备</string>
 
     <!-- 科技页 -->
     <string name="cap_tech_list_title">科技</string>
@@ -101,13 +104,22 @@
     <string name="cap_tech_btn_view">查看</string>
     <string name="cap_tech_btn_calculation">计算</string>
     <string name="cap_tech_btn_share">分享</string>
-
+    
+    <string name="tech_main_gun_all">主炮 ：　　</string>
+    <string name="tech_shield_all">防护：　　</string>
+    <string name="tech_bodywork_all">综合车体：</string>
+    <string name="tech_engine_all">综合引擎：</string>
+    <string name="tech_seek_all">综合索敌：</string>
+    
     <!-- 攻略页 -->
     <string name="cap_official_strategy_title">官方攻略</string>
     <string name="cap_terrain_strategy">推图地形一览</string>
     <string name="cap_terrain_strategy_sp">T图地形一览</string>
+    <string name="cap_terrain">地形一览</string>
     <string name="cap_terrain_effect">地形造成的影响</string>
     <string name="cap_terrain_resistance">对应抗性</string>
+    <string name="cap_terrain_activity">活动地形一览</string>
+    <string name="cap_terrain_raid">突袭地形一览</string>
 
     <!-- 玄学页 -->
     <string name="cap_metaphysics_title">玄学</string>
@@ -121,10 +133,11 @@
 
     <!-- live2d -->
     <string name="msg_failed_to_load">live2D加载失败！</string>
-     
+
     <!-- 设置 -->
     <string name="cap_setting_medal_mode">全部授勋模式：</string>
     <string name="cap_setting_live2d_setup_tool">安装Live2D资源</string>
     <string name="cap_setting_ver_update_history">版本更新历史</string>
     <string name="cap_setting_ver_update">版本更新</string>
+
 </resources>

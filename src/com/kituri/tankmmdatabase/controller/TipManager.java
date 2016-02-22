@@ -130,25 +130,45 @@ public class TipManager {
 	static public ArrayList<Tip> getTipsList(Context context){
 		ArrayList<Tip> tips = new ArrayList<Tip>();
 		Tip tip01 = new Tip();
-		tip01.setTipName(context.getString(R.string.cap_official_strategy_title));
+		tip01.setTipName(context.getString(R.string.cap_terrain));	
 		Tip tip02 = new Tip();
-		tip02.setTipName(context.getString(R.string.cap_terrain_strategy));
+		tip02.setTipName(context.getString(R.string.cap_official_strategy_title));
 		Tip tip03 = new Tip();
-		tip03.setTipName(context.getString(R.string.cap_terrain_strategy_sp));
+		tip03.setTipName(context.getString(R.string.cap_terrain_strategy));
 		Tip tip04 = new Tip();
-		tip04.setTipName(context.getString(R.string.cap_terrain));		
+		tip04.setTipName(context.getString(R.string.cap_terrain_strategy_sp));
+		Tip tip05 = new Tip();
+		tip05.setTipName(context.getString(R.string.cap_terrain_activity));
+		Tip tip06 = new Tip();
+		tip06.setTipName(context.getString(R.string.cap_terrain_raid));
+	
 		tips.add(tip01);
 		tips.add(tip02);
 		tips.add(tip03);
 		tips.add(tip04);
+		tips.add(tip05);
+		tips.add(tip06);
 		return tips;
 	}
 	
-	static public ListEntry getSpStrategyTerrains(Context context){
-		ListEntry strategys = new ListEntry();
+	static public ListEntry getTerrainsSPStrategy(Context context){
+		return getTerrains(context, "msst.krw", 7);
+	}
+	
+	//获取资材、军饷、狗牌活动地形（活动地形）
+	static public ListEntry getTerrainsActivity(Context context){
+		return getTerrains(context, "msta.krw", 4);
+	}
+	
+	//获取突袭地形
+	static public ListEntry getTerrainsRaid(Context context){
+		return getTerrains(context, "mstr.krw", 2);
+	}
+	static public ListEntry getTerrains(Context context, String fileName, int length){
+		ListEntry terrains = new ListEntry();
 		InputStream in = null;
 		try {
-			in = context.getAssets().open("msst.krw");
+			in = context.getAssets().open(fileName);
 			BufferedReader reader = MUtils.getAsReader(FileUtils.readInStream(in));
 			//BufferedReader reader = new BufferedReader(new InputStreamReader(in));
 			String line = null;
@@ -157,7 +177,7 @@ public class TipManager {
 				// Log.e("", "Line is "+line);
 				line = Utils.getLanguageString(line);
 				temp = line.split(",");
-				if (temp != null && temp.length == 7) {
+				if (temp != null && temp.length == length) {
 					StrategyTerrainData strategyTerrain = new StrategyTerrainData();
 					strategyTerrain.setStageName(temp[0]);
 					for(int i = 1 ; i < temp.length; i++){
@@ -167,7 +187,7 @@ public class TipManager {
 							}						
 						}		
 					}					
-					strategys.add(strategyTerrain);
+					terrains.add(strategyTerrain);
 				}
 			}
 
@@ -184,7 +204,7 @@ public class TipManager {
 				}
 			}
 		}
-		return strategys;
+		return terrains;
 	}
 	
 	

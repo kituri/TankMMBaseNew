@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import com.kituri.app.controller.EntryAdapter;
 import com.kituri.app.data.Entry;
 import com.kituri.app.data.ListEntry;
+import com.kituri.app.ui.BaseFragmentActivity;
 import com.kituri.app.widget.SelectionListener;
 import com.kituri.app.widget.dialog.CustomDialog;
 import com.kituri.tankmmdatabase.KituriTankMMApplication;
@@ -12,16 +13,17 @@ import com.kituri.tankmmdatabase.R;
 import com.kituri.tankmmdatabase.data.tank.TankData;
 import com.kituri.tankmmdatabase.data.tip.TerrainData;
 import com.kituri.tankmmdatabase.model.Intent;
-import com.kituri.tankmmdatabase.ui.common.BaseActivity;
 import com.kituri.tankmmdatabase.widget.dialog.DialogTerrainDetail;
 import com.kituri.tankmmdatabase.widget.tip.ItemStrategyTerrain;
 import com.kituri.tankmmdatabase.widget.tip.ItemTerrain;
+import com.kituri.app.model.JsonModel;
 
+import android.os.Bundle;
 import android.view.View;
 import android.widget.GridView;
 import android.widget.ListView;
 
-public class TerrainActivity extends BaseActivity implements SelectionListener<Entry> {
+public class TerrainActivity extends BaseFragmentActivity implements SelectionListener<Entry> {
 
 	private GridView gv_terrain;
 	private ListView lv_terrain;
@@ -32,22 +34,9 @@ public class TerrainActivity extends BaseActivity implements SelectionListener<E
 	private DialogTerrainDetail mDialogTerrain;
 	private TankData mData;
 	private ListEntry terrains;
-	
-	public TerrainActivity() {
-		super(R.layout.activity_terrain);
-		// TODO Auto-generated constructor stub
-	}
 
 	@Override
-	protected void getData() {
-		// TODO Auto-generated method stub
-		mData = (TankData) getIntent().getSerializableExtra(Intent.EXTRA_TANK_DATA);
-		terrains = (ListEntry) getIntent().getSerializableExtra(Intent.EXTRA_TERRAIN_LIST);
-				//com.kituri.tankmmdatabase.model.Intent.EXTRA_TERRAIN_LIST
-	}
-
-	@Override
-	protected void initView() {
+	public void initView() {
 		// TODO Auto-generated method stub
 		if(mData == null){
 			setTitle(R.string.cap_terrain);
@@ -113,4 +102,24 @@ public class TerrainActivity extends BaseActivity implements SelectionListener<E
 		}
 	}
 
+	@Override
+	public int getLayoutID() {
+		// TODO Auto-generated method stub
+		return R.layout.activity_terrain;
+	}
+
+	@Override
+	public void initDataBundle(Bundle bundle) {
+		// TODO Auto-generated method stub
+		mData = (TankData) bundle.getSerializable(Intent.EXTRA_TANK_DATA);
+		terrains = (ListEntry) bundle.getSerializable(Intent.EXTRA_TERRAIN_LIST);
+				//com.kituri.tankmmdatabase.model.Intent.EXTRA_TERRAIN_LIST
+	}
+
+	@Override
+	protected JsonModel initJsonModel() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
 }

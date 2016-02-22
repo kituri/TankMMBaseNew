@@ -2,6 +2,7 @@ package com.kituri.tankmmdatabase.ui.equip;
 
 import java.util.List;
 
+import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.GridView;
@@ -9,6 +10,7 @@ import android.widget.TextView;
 
 import com.kituri.app.controller.EntryAdapter;
 import com.kituri.app.data.Entry;
+import com.kituri.app.ui.BaseFragmentActivity;
 import com.kituri.app.widget.SelectionListener;
 import com.kituri.app.widget.dialog.CustomDialog;
 import com.kituri.tankmmdatabase.R;
@@ -16,17 +18,18 @@ import com.kituri.tankmmdatabase.controller.EquipManager;
 import com.kituri.tankmmdatabase.data.equip.EquipData;
 import com.kituri.tankmmdatabase.data.equip.EquipSearchData;
 import com.kituri.tankmmdatabase.model.Intent;
-import com.kituri.tankmmdatabase.ui.common.BaseActivity;
+
 import com.kituri.tankmmdatabase.widget.dialog.DialogEquipDetail;
 import com.kituri.tankmmdatabase.widget.dialog.DialogSearchEquipFilter;
 import com.kituri.tankmmdatabase.widget.equip.ItemEquipList;
+import com.kituri.app.model.JsonModel;
 
-public class EquipListActivity extends BaseActivity implements SelectionListener<Entry>, OnClickListener {
+public class EquipListActivity extends BaseFragmentActivity implements SelectionListener<Entry>, OnClickListener {
 
-	public EquipListActivity() {
-		super(R.layout.activity_equip_list);
-		// TODO Auto-generated constructor stub
-	}
+	@Override
+	public int getLayoutID() {
+		return R.layout.activity_equip_list;
+	}	
 
 	private GridView gv_equip_list;
 	private TextView tv_search;
@@ -39,13 +42,15 @@ public class EquipListActivity extends BaseActivity implements SelectionListener
 	private EquipSearchData mSearchData;
 
 	@Override
-	protected void getData() {
+	public void initDataBundle(Bundle bundle) {
 		// TODO Auto-generated method stub
-		mSearchData = (EquipSearchData) getIntent().getSerializableExtra(Intent.EXTRA_EQUIP_SEARCH_DATA);
+		if (bundle == null)
+			return;
+		mSearchData = (EquipSearchData) bundle.getSerializable(Intent.EXTRA_EQUIP_SEARCH_DATA);
 	}
 
 	@Override
-	protected void initView() {
+	public void initView() {
 		// TODO Auto-generated method stub
 		setTitle(R.string.cap_equip_list_title);
 		setHomeAction(false);
@@ -119,6 +124,12 @@ public class EquipListActivity extends BaseActivity implements SelectionListener
 		default:
 			break;
 		}
+	}
+
+	@Override
+	protected JsonModel initJsonModel() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

@@ -53,6 +53,10 @@ public class MUtils {
 //	    		name1 = "mst.krw";
 //	    	}else if(name.equals("terrain_test.csv")){
 //	    		name1 = "mttn.krw";
+//	    	}else if(name.equals("msta.csv")){
+//	    		name1 = "msta.krw";
+//	    	}else if(name.equals("mstr.csv")){
+//	    		name1 = "mstr.krw";
 //	    	}else{
 //	    		name1 = name;
 //	    	}

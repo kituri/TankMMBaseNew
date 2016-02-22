@@ -2,32 +2,28 @@ package com.kituri.tankmmdatabase.ui.tank;
 
 import com.kituri.app.controller.EntryAdapter;
 import com.kituri.app.data.Entry;
+import com.kituri.app.ui.BaseFragmentActivity;
+import com.kituri.app.ui.BaseFragmentActivity;
 import com.kituri.app.widget.SelectionListener;
 import com.kituri.tankmmdatabase.R;
 import com.kituri.tankmmdatabase.data.tank.TankDataBase;
 import com.kituri.tankmmdatabase.data.tank.TankSearchFilterData;
 import com.kituri.tankmmdatabase.data.tank.TankSearchFilterItemData;
 import com.kituri.tankmmdatabase.model.Intent;
-import com.kituri.tankmmdatabase.ui.common.BaseActivity;
 import com.kituri.tankmmdatabase.utils.TransformerUtils;
 import com.kituri.tankmmdatabase.widget.tank.ItemFilterTank;
+import com.kituri.app.model.JsonModel;
 
+import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.GridView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-public class TankFilterActivity extends BaseActivity implements SelectionListener<Entry>, OnClickListener{
+public class TankFilterActivity extends BaseFragmentActivity implements SelectionListener<Entry>, OnClickListener{
 
 	private TankSearchFilterData mSearchData;
-	
-	
-	public TankFilterActivity() {
-		super(R.layout.activity_tank_filter);
-		// TODO Auto-generated constructor stub
-	}
-
 	private TextView tv_ok;
 	private TextView tv_default;
 	
@@ -45,15 +41,9 @@ public class TankFilterActivity extends BaseActivity implements SelectionListene
 	private final TankDataBase nationalityBase = new TankDataBase(TankDataBase._TANK_NATIONALITY);
 	private final TankDataBase starBase = new TankDataBase(TankDataBase._TANK_STAR);
 	private final TankDataBase statisticBase = new TankDataBase(TankDataBase._TANK_STATISTIC);
-	
-	@Override
-	protected void getData() {
-		// TODO Auto-generated method stub
-		mSearchData = (TankSearchFilterData) getIntent().getSerializableExtra(Intent.EXTRA_TANK_SEARCH_DATA);
-	}
 
 	@Override
-	protected void initView() {
+	public void initView() {
 		// TODO Auto-generated method stub
 		setTitle(R.string.cap_dialog_choice_filter);
 		setHomeAction(false);
@@ -177,4 +167,22 @@ public class TankFilterActivity extends BaseActivity implements SelectionListene
 		}
 	}
 
+	@Override
+	public int getLayoutID() {
+		// TODO Auto-generated method stub
+		return R.layout.activity_tank_filter;
+	}
+
+	@Override
+	public void initDataBundle(Bundle bundle) {
+		// TODO Auto-generated method stub
+		mSearchData = (TankSearchFilterData) bundle.getSerializable(Intent.EXTRA_TANK_SEARCH_DATA);
+
+	}
+
+	@Override
+	protected JsonModel initJsonModel() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

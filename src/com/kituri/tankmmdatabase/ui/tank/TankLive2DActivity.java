@@ -1,11 +1,12 @@
 package com.kituri.tankmmdatabase.ui.tank;
 
+import com.kituri.app.ui.BaseFragmentActivity;
 import com.kituri.tankmmdatabase.R;
 import com.kituri.tankmmdatabase.data.tank.TankData;
 import com.kituri.tankmmdatabase.model.Intent;
-import com.kituri.tankmmdatabase.ui.common.BaseActivity;
+import com.kituri.app.model.JsonModel;
 
-import android.app.Activity;
+import android.os.Bundle;
 import android.os.Environment;
 import android.os.Handler;
 import android.view.ViewGroup.LayoutParams;
@@ -18,7 +19,7 @@ import jp.live2d.sample.LAppView;
 import jp.live2d.utils.android.FileManager;
 import jp.live2d.utils.android.SoundManager;
 
-public class TankLive2DActivity extends BaseActivity implements Live2DOnExitListener{
+public class TankLive2DActivity extends BaseFragmentActivity implements Live2DOnExitListener{
 	 
 	private TankData mTankData;
 	//  Live2Dの管理
@@ -26,17 +27,6 @@ public class TankLive2DActivity extends BaseActivity implements Live2DOnExitList
 	//static private Activity instance;
 	private Handler mHandler = new Handler();
 	
-	@Override
-	protected void getData() {
-		// TODO Auto-generated method stub
-		mTankData = (TankData) ((TankData) getIntent().getSerializableExtra(Intent.EXTRA_TANK_DATA)).clone();
-	}
-	
-	public TankLive2DActivity() {
-		super(R.layout.activity_tank_live2d);
-		// TODO Auto-generated constructor stub		
-	}
-
 	void setupGUI()
 	{
 		//initLive2D();
@@ -57,7 +47,7 @@ public class TankLive2DActivity extends BaseActivity implements Live2DOnExitList
 	}
 
 	@Override
-	protected void initView() {
+	public void initView() {
 		// TODO Auto-generated method stub
 		if(mTankData == null){
 			finish();
@@ -116,5 +106,23 @@ public class TankLive2DActivity extends BaseActivity implements Live2DOnExitList
 		SoundManager.release();
 		finish();
 	}
-	
+
+	@Override
+	public int getLayoutID() {
+		// TODO Auto-generated method stub
+		return R.layout.activity_tank_live2d;
+	}
+
+	@Override
+	public void initDataBundle(Bundle bundle) {
+		// TODO Auto-generated method stub
+		mTankData = (TankData) ((TankData) bundle.getSerializable(Intent.EXTRA_TANK_DATA)).clone();
+	}
+
+	@Override
+	protected JsonModel initJsonModel() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+		
 }

@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.kituri.app.controller.EntryAdapter;
 import com.kituri.app.data.Entry;
+import com.kituri.app.ui.BaseFragmentActivity;
 import com.kituri.app.widget.SelectionListener;
 import com.kituri.app.widget.dialog.CustomDialog;
 import com.kituri.tankmmdatabase.KituriTankMMApplication;
@@ -12,25 +13,21 @@ import com.kituri.tankmmdatabase.controller.TechManager;
 import com.kituri.tankmmdatabase.data.tech.TechSearchData;
 import com.kituri.tankmmdatabase.data.tech.TechTypeData;
 import com.kituri.tankmmdatabase.model.Intent;
-import com.kituri.tankmmdatabase.ui.common.BaseActivity;
 import com.kituri.tankmmdatabase.widget.dialog.DialogTechNumberPicker;
 import com.kituri.tankmmdatabase.widget.dialog.DialogTechTypeFilter;
 import com.kituri.tankmmdatabase.widget.tech.ItemTypeTech;
+import com.kituri.app.model.JsonModel;
 
+import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
-//科技模拟器，还未制作
-public class TechEmuActivity extends BaseActivity implements SelectionListener<Entry>, OnClickListener {
+//科技模拟器
+public class TechEmuActivity extends BaseFragmentActivity implements SelectionListener<Entry>, OnClickListener {
 
-	public TechEmuActivity() {
-		super(R.layout.activity_tech_emu);
-		// TODO Auto-generated constructor stub
-	}
-
+	
 	private ListView lv_tech_list;
 	private TextView tv_search;
 	private CustomDialog mCustomDialog;
@@ -43,13 +40,7 @@ public class TechEmuActivity extends BaseActivity implements SelectionListener<E
 	private TechSearchData mSearchData;
 
 	@Override
-	protected void getData() {
-		// TODO Auto-generated method stub
-		mSearchData = (TechSearchData) getIntent().getSerializableExtra(Intent.EXTRA_TECH_SEARCH_DATA);
-	}
-
-	@Override
-	protected void initView() {
+	public void initView() {
 		// TODO Auto-generated method stub
 		setTitle(R.string.cap_tech_emu_title);
 		setHomeAction(false);
@@ -136,19 +127,33 @@ public class TechEmuActivity extends BaseActivity implements SelectionListener<E
 //			Toast.makeText(this, getString(R.string.msg_opeartion_is_ok), Toast.LENGTH_SHORT).show();
 //			break;
 		case R.id.tv_share:
-			TechManager.share(this);
+			KituriTankMMApplication.gotoTechShare(this, true);
 			break;
 		case R.id.tv_view:
-			Toast.makeText(this, TechManager.getShareContent(this), Toast.LENGTH_LONG).show();
+			KituriTankMMApplication.gotoTechShare(this, false);
+			//Toast.makeText(this, TechManager.getShareContent(this), Toast.LENGTH_LONG).show();
 			break;
 		default:
 			break;
 		}
 	}
 
-//	public void onDestroy(){
-//		TechManager.techEmuSave(this);
-//		super.onDestroy();		
-//	}
+	@Override
+	public int getLayoutID() {
+		// TODO Auto-generated method stub
+		return R.layout.activity_tech_emu;
+	}
+
+	@Override
+	public void initDataBundle(Bundle bundle) {
+		// TODO Auto-generated method stub
+		mSearchData = (TechSearchData) bundle.getSerializable(Intent.EXTRA_TECH_SEARCH_DATA);
+	}
+
+	@Override
+	protected JsonModel initJsonModel() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	
 }

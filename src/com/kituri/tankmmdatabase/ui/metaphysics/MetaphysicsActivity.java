@@ -2,34 +2,28 @@ package com.kituri.tankmmdatabase.ui.metaphysics;
 
 import com.kituri.app.data.Entry;
 import com.kituri.app.push.PsPushUserData;
+import com.kituri.app.ui.BaseFragmentActivity;
 import com.kituri.app.widget.SelectionListener;
 import com.kituri.app.widget.dialog.CustomDialog;
 import com.kituri.tankmmdatabase.KituriTankMMApplication;
 import com.kituri.tankmmdatabase.R;
 import com.kituri.tankmmdatabase.data.tank.TankData;
-import com.kituri.tankmmdatabase.data.tank.TankSearchFilterData;
-import com.kituri.tankmmdatabase.data.tech.TechData;
 import com.kituri.tankmmdatabase.model.Intent;
-import com.kituri.tankmmdatabase.ui.common.BaseActivity;
 import com.kituri.tankmmdatabase.utils.Utils;
 import com.kituri.tankmmdatabase.widget.dialog.DialogMetaphysicsResult;
+import com.kituri.app.model.JsonModel;
 
+import android.os.Bundle;
 import android.text.TextUtils;
-import android.util.Base64;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class MetaphysicsActivity extends BaseActivity implements OnClickListener, SelectionListener<Entry> {
+public class MetaphysicsActivity extends BaseFragmentActivity implements OnClickListener, SelectionListener<Entry> {
 
 	static public final String METAPHYSICS_NAME = "metaphysics_name";
-	
-	public MetaphysicsActivity() {
-		super(R.layout.activity_metaphysics);
-		// TODO Auto-generated constructor stub
-	}
 
 	private CustomDialog mMresultDialog;
 	private DialogMetaphysicsResult mDialogMetaphysicsResult;
@@ -37,13 +31,7 @@ public class MetaphysicsActivity extends BaseActivity implements OnClickListener
 	private TextView tv_get_tank;
 
 	@Override
-	protected void getData() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	protected void initView() {
+	public void initView() {
 		// TODO Auto-generated method stub
 		setTitle(R.string.cap_database_category_metaphysics);
 		setHomeAction(false);		
@@ -91,6 +79,24 @@ public class MetaphysicsActivity extends BaseActivity implements OnClickListener
 		}else if (action.equals(Intent.ACTION_TANK_DETAIL)) {
 			KituriTankMMApplication.gotoTankDetail(this, (TankData) item);
 		}
+	}
+
+	@Override
+	public int getLayoutID() {
+		// TODO Auto-generated method stub
+		return R.layout.activity_metaphysics;
+	}
+
+	@Override
+	public void initDataBundle(Bundle bundle) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	protected JsonModel initJsonModel() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 

@@ -4,34 +4,25 @@ import java.util.ArrayList;
 
 import com.kituri.app.controller.EntryAdapter;
 import com.kituri.app.data.Entry;
+import com.kituri.app.ui.BaseFragmentActivity;
 import com.kituri.app.widget.SelectionListener;
 import com.kituri.tankmmdatabase.KituriTankMMApplication;
 import com.kituri.tankmmdatabase.R;
 import com.kituri.tankmmdatabase.controller.TipManager;
 import com.kituri.tankmmdatabase.data.tip.Tip;
-import com.kituri.tankmmdatabase.ui.common.BaseActivity;
 import com.kituri.tankmmdatabase.widget.tip.ItemTip;
+import com.kituri.app.model.JsonModel;
 
+import android.os.Bundle;
 import android.widget.ListView;
 
-public class TipActivity extends BaseActivity implements SelectionListener<Entry>{
+public class TipActivity extends BaseFragmentActivity implements SelectionListener<Entry>{
 
 	private ListView lv_tips;
 	private EntryAdapter mAdapter;
-	
-	public TipActivity() {
-		super(R.layout.activity_tips);
-		// TODO Auto-generated constructor stub
-	}
 
 	@Override
-	protected void getData() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	protected void initView() {
+	public void initView() {
 		// TODO Auto-generated method stub
 		setTitle(R.string.cap_database_category_tips);
 		setHomeAction(false);
@@ -72,7 +63,31 @@ public class TipActivity extends BaseActivity implements SelectionListener<Entry
 		}else if(tipName.equals(getString(R.string.cap_terrain))){
 			//地形一览
 			KituriTankMMApplication.gotoTerrain(this, null);
+		}else if(tipName.equals(getString(R.string.cap_terrain_activity))){
+			//活动地形
+			KituriTankMMApplication.gotoTerrainActivity(this);
+		}else if(tipName.equals(getString(R.string.cap_terrain_raid))){
+			//突袭地形
+			KituriTankMMApplication.gotoTerrainRaid(this);
 		}
 	}
 
+	@Override
+	public int getLayoutID() {
+		// TODO Auto-generated method stub
+		return R.layout.activity_tips;
+	}
+
+	@Override
+	public void initDataBundle(Bundle bundle) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	protected JsonModel initJsonModel() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
 }

@@ -44,6 +44,7 @@
                     android:horizontalSpacing="4dp"
                     android:numColumns="4"
                     android:stretchMode="columnWidth"
+                    
                     android:verticalSpacing="4dp" />
             </RelativeLayout>
 

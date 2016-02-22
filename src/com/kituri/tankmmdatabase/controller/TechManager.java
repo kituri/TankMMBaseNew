@@ -1,14 +1,18 @@
 package com.kituri.tankmmdatabase.controller;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.InputStreamReader;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 
 import com.kituri.app.data.ListEntry;
 import com.kituri.app.push.PsPushUserData;
+import com.kituri.app.utils.FileManager;
 import com.kituri.app.utils.FileUtils;
 import com.kituri.tankmmdatabase.KituriTankMMApplication;
 import com.kituri.tankmmdatabase.R;
@@ -28,9 +32,12 @@ import com.kituri.tankmmdatabase.ui.metaphysics.MetaphysicsActivity;
 import com.kituri.tankmmdatabase.utils.MUtils;
 import com.kituri.tankmmdatabase.utils.Utils;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
-import android.widget.Toast;
+import android.net.Uri;
+import android.os.Environment;
+import android.view.View;
 
 public class TechManager {
 
@@ -338,6 +345,32 @@ public class TechManager {
 
 	}
 
+	static public void share(Activity context, View view) {
+		String title = String.format(context.getString(R.string.msg_tech_btn_share_title),
+		PsPushUserData.getData(context, MetaphysicsActivity.METAPHYSICS_NAME, ""));
+		Intent intent = new Intent(Intent.ACTION_SEND);
+		intent.putExtra(Intent.EXTRA_SUBJECT, context.getString(R.string.msg_share_subject));
+        String path = getSharePath(context, view);
+		File f = new File(path);  
+        if (f != null && f.exists() && f.isFile()) {  
+            intent.setType("image/jpg");  
+            Uri u = Uri.fromFile(f);  
+            intent.putExtra(Intent.EXTRA_STREAM, u);  
+        }  
+		intent.putExtra(Intent.EXTRA_TITLE, title);
+		intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+		context.startActivity(Intent.createChooser(intent, context.getString(R.string.msg_share_title)));
+
+	}
+	
+	static public String getSharePath(Activity context, View view){
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd_HH-mm-ss", Locale.getDefault());
+		String path = FileManager.getSDPath() 
+		+ File.separator + "TankMMBase" + File.separator + sdf.format(new Date()) + ".png";;
+		Utils.shoot(context, view, new File(path));
+		return path;
+	}
+	
 	static public TankStatisticData getTankStatisticData(String statisticName, String statisticValue) {
 		for (int i = 0; i < TankDataBase.TANK_STATISTIC.ALL_STRING.length; i++) {
 			if (TankDataBase.TANK_STATISTIC.ALL_STRING[i].equals(statisticName)) {

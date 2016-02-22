@@ -6,345 +6,371 @@
 
     <include layout="@layout/common_title_bar" />
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_margin="4dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:layout_weight="1"
-        android:background="@drawable/bg_dialog_and_other"
-        android:orientation="vertical" >
+        android:layout_weight="1" >
 
         <LinearLayout
-            android:id="@+id/linearLayout1"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_marginTop="8dp"
-            android:background="@drawable/bg_tank_detai_title_info" >
-
-            <ImageView
-                android:id="@+id/iv_head"
-                android:layout_width="105dp"
-                android:layout_height="30dp"
-                android:layout_gravity="center_vertical"
-                android:src="@null" />
+            android:layout_height="0dp"
+            android:background="@drawable/bg_dialog_and_other"
+            android:orientation="vertical" >
 
             <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="6dp"
-                android:layout_weight="1"
-                android:orientation="horizontal" >
+                android:id="@+id/linearLayout1"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/bg_tank_detai_title_info" >
 
                 <ImageView
-                    android:id="@+id/iv_nationality"
-                    android:layout_width="34dp"
-                    android:layout_height="34dp"
-                    android:layout_gravity="center_vertical"
-                    android:src="@drawable/icon_tank_national_flag_01" />
-
-                <ImageView
-                    android:id="@+id/iv_type"
-                    android:layout_width="36dp"
+                    android:id="@+id/iv_head"
+                    android:layout_width="105dp"
                     android:layout_height="30dp"
-                    android:layout_gravity="bottom"
-                    android:layout_marginLeft="8dp"
-                    android:src="@drawable/icon_tank_type_spg" />
+                    android:layout_gravity="center_vertical"
+                    android:src="@null" />
 
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="bottom"
-                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="6dp"
                     android:layout_weight="1"
-                    android:orientation="vertical" >
+                    android:orientation="horizontal" >
 
-                    <TextView
-                        android:id="@+id/tv_name"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="莫夏·梅列茨安娜"
-                        android:textColor="@color/td_item_tank_name"
-                        android:textSize="@dimen/tv_size_small_sml"
-                        android:textStyle="bold" />
+                    <ImageView
+                        android:id="@+id/iv_nationality"
+                        android:layout_width="34dp"
+                        android:layout_height="34dp"
+                        android:layout_gravity="center_vertical"
+                        android:src="@drawable/icon_tank_national_flag_01" />
 
-                    <TextView
-                        android:id="@+id/tv_class"
-                        android:layout_width="match_parent"
+                    <ImageView
+                        android:id="@+id/iv_type"
+                        android:layout_width="36dp"
+                        android:layout_height="30dp"
+                        android:layout_gravity="bottom"
+                        android:layout_marginLeft="8dp"
+                        android:src="@drawable/icon_tank_type_spg" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:gravity="bottom"
-                        android:text="SU-8自行火炮"
-                        android:textColor="@android:color/white"
-                        android:textSize="@dimen/tv_size_medium_med"
-                        android:textStyle="bold" />
+                        android:layout_gravity="bottom"
+                        android:layout_marginLeft="8dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical" >
+
+                        <TextView
+                            android:id="@+id/tv_name"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="莫夏·梅列茨安娜"
+                            android:textColor="@color/td_item_tank_name"
+                            android:textSize="@dimen/tv_size_small_sml"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/tv_class"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="bottom"
+                            android:text="SU-8自行火炮"
+                            android:textColor="@android:color/white"
+                            android:textSize="@dimen/tv_size_medium_med"
+                            android:textStyle="bold" />
+                    </LinearLayout>
                 </LinearLayout>
             </LinearLayout>
-        </LinearLayout>
 
-        <GridView
-            android:id="@+id/gv_statistics"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="10dp"
-            android:horizontalSpacing="1dp"
-            android:numColumns="3"
-            android:stretchMode="columnWidth"
-            android:verticalSpacing="1dp"
-            android:visibility="gone" />
-
-        <GridView
-            android:id="@+id/gv_equipmentslots"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:layout_marginTop="10dp"
-            android:numColumns="8"
-            android:visibility="gone" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical" >
-
-            <LinearLayout
-                android:layout_width="match_parent"
+            <com.kituri.tankmmdatabase.widget.NoScrollGridView
+                android:id="@+id/gv_statistics"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="vertical" >
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp"
+                android:horizontalSpacing="1dp"
+                android:numColumns="3"
+                android:stretchMode="columnWidth"
+                android:verticalSpacing="1dp"
+                android:visibility="gone" />
 
-                <TextView
-                    android:id="@+id/tv_acqierement"
-                    style="@style/style_tv_statistic"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginRight="20dp"
-                    android:layout_marginTop="10dp"
-                    android:text="才艺才艺才艺" />
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginRight="20dp"
-                    android:layout_marginTop="10dp"
-                    android:orientation="horizontal" >
-
-                    <TextView
-                        style="@style/style_tv_statistic"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_vertical"
-                        android:layout_marginRight="2dp"
-                        android:text="@string/cap_tank_skill_engine" />
-
-                    <TextView
-                        android:id="@+id/tv_engine"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="left|center_vertical"
-                        android:gravity="left|center_vertical"
-                        android:padding="4dp"
-                        android:text="【稳定】【稳定】【稳定】"
-                        android:textColor="@color/td_highlight_text_direction"
-                        android:textSize="@dimen/tv_size_small_big" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginRight="20dp"
-                    android:layout_marginTop="10dp"
-                    android:orientation="horizontal"
-                    android:visibility="gone" >
-
-                    <TextView
-                        style="@style/style_tv_statistic"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_vertical"
-                        android:layout_marginRight="2dp"
-                        android:text="@string/cap_tank_skill_shield" />
-
-                    <TextView
-                        android:id="@+id/tv_shield"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="left|center_vertical"
-                        android:gravity="left|center_vertical"
-                        android:padding="4dp"
-                        android:text="【稳定】【稳定】【稳定】"
-                        android:textColor="@color/td_highlight_text_direction"
-                        android:textSize="@dimen/tv_size_small_big" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginRight="20dp"
-                    android:layout_marginTop="10dp"
-                    android:orientation="horizontal" >
-
-                    <TextView
-                        style="@style/style_tv_statistic"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_vertical"
-                        android:layout_marginRight="2dp"
-                        android:text="@string/cap_tank_skill_bodywork" />
-
-                    <TextView
-                        android:id="@+id/tv_bodywork"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="left|center_vertical"
-                        android:gravity="left|center_vertical"
-                        android:padding="4dp"
-                        android:text="【稳定】【稳定】【稳定】"
-                        android:textColor="@color/td_highlight_text_direction"
-                        android:textSize="@dimen/tv_size_small_big" />
-                </LinearLayout>
-
-                <HorizontalScrollView 
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginRight="20dp"
-                    android:layout_marginTop="10dp"
-                    >
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal" >
-
-                    <com.kituri.app.widget.XRelativeLayout
-                        android:id="@+id/rl_engine_check"
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        android:background="@drawable/bg_tech_small" >
-
-                        <ImageView
-                            android:id="@+id/iv_engine_check"
-                            android:layout_width="44dp"
-                            android:layout_height="44dp"
-                            android:layout_centerHorizontal="true"
-                            android:layout_centerVertical="true"
-                            android:src="@drawable/icon_tech_engine_type_01" />
-                    </com.kituri.app.widget.XRelativeLayout>
-
-                    <com.kituri.app.widget.XRelativeLayout
-                        android:id="@+id/rl_shield_check"
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        android:layout_marginLeft="10dp"
-                        android:background="@drawable/bg_tech_small" >
-
-                        <ImageView
-                            android:id="@+id/iv_shield_check"
-                            android:layout_width="44dp"
-                            android:layout_height="44dp"
-                            android:layout_centerHorizontal="true"
-                            android:layout_centerVertical="true"
-                            android:src="@drawable/icon_tech_shield_type_02" />
-                    </com.kituri.app.widget.XRelativeLayout>
-
-                    <com.kituri.app.widget.XRelativeLayout
-                        android:id="@+id/rl_bodywork_check"
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        android:layout_marginLeft="10dp"
-                        android:background="@drawable/bg_tech_small" >
-
-                        <ImageView
-                            android:id="@+id/iv_bodywork_check"
-                            android:layout_width="44dp"
-                            android:layout_height="44dp"
-                            android:layout_centerHorizontal="true"
-                            android:layout_centerVertical="true"
-                            android:src="@drawable/icon_tech_bodywork_type_01" />
-                    </com.kituri.app.widget.XRelativeLayout>
-
-                    <com.kituri.app.widget.XRelativeLayout
-                        android:id="@+id/rl_maingun_check"
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        android:layout_marginLeft="10dp"
-                        android:background="@drawable/bg_tech_small" >
-
-                        <ImageView
-                            android:id="@+id/iv_maingun_check"
-                            android:layout_width="44dp"
-                            android:layout_height="44dp"
-                            android:layout_centerHorizontal="true"
-                            android:layout_centerVertical="true"
-                            android:src="@drawable/icon_tech_maingun" />
-                    </com.kituri.app.widget.XRelativeLayout>
-
-                                        <com.kituri.app.widget.XRelativeLayout
-                        android:id="@+id/rl_terrain_check"
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        android:layout_marginLeft="10dp"
-                        android:background="@drawable/bg_tech_small" >
-
-                        <ImageView
-                            android:id="@+id/iv_terrain_check"
-                            android:layout_width="44dp"
-                            android:layout_height="44dp"
-                            android:layout_centerHorizontal="true"
-                            android:layout_centerVertical="true"
-                            android:src="@drawable/terrain_icon_00" />
-                    </com.kituri.app.widget.XRelativeLayout>
-                    
-                    <com.kituri.app.widget.XRelativeLayout
-                        android:id="@+id/rl_rank_max_mode"
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        android:layout_marginLeft="10dp"
-                        android:background="@drawable/bg_tech_small" >
-
-                        <ImageView
-                            android:id="@+id/iv_rank_max_mode"
-                            android:layout_width="44dp"
-                            android:layout_height="44dp"
-                            android:layout_centerHorizontal="true"
-                            android:layout_centerVertical="true"
-                            android:src="@drawable/icon_rank_star" />
-                    </com.kituri.app.widget.XRelativeLayout>
-                </LinearLayout>
-                </HorizontalScrollView>
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/ll_other_detail"
+            <com.kituri.tankmmdatabase.widget.NoScrollGridView
+                android:id="@+id/gv_equipmentslots"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
                 android:layout_marginTop="10dp"
-                android:background="@drawable/bg_edit_input"
-                android:orientation="horizontal" >
+                android:numColumns="8"
+                android:visibility="gone" />
 
-                <com.kituri.app.widget.XImageView
-                    android:id="@+id/iv_live2d"
-                    android:layout_width="74dp"
-                    android:layout_height="match_parent"
-                    android:src="@drawable/icon_live2d" />
-                
-                <TextView
-                    android:id="@+id/tv_profiles"
-                    android:layout_margin="4dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="100dp"
-                    android:text="介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍"
-                    android:textColor="@android:color/white"
-                    android:textSize="@dimen/tv_size_small_med" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical" >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:id="@+id/tv_acqierement"
+                        style="@style/style_tv_statistic"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginTop="10dp"
+                        android:text="才艺才艺才艺" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal" >
+
+                        <TextView
+                            style="@style/style_tv_statistic"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginRight="2dp"
+                            android:text="@string/cap_tank_skill_engine" />
+
+                        <TextView
+                            android:id="@+id/tv_engine"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="left|center_vertical"
+                            android:gravity="left|center_vertical"
+                            android:padding="4dp"
+                            android:text="【稳定】【稳定】【稳定】"
+                            android:textColor="@color/td_highlight_text_direction"
+                            android:textSize="@dimen/tv_size_small_big" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal"
+                        android:visibility="gone" >
+
+                        <TextView
+                            style="@style/style_tv_statistic"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginRight="2dp"
+                            android:text="@string/cap_tank_skill_shield" />
+
+                        <TextView
+                            android:id="@+id/tv_shield"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="left|center_vertical"
+                            android:gravity="left|center_vertical"
+                            android:padding="4dp"
+                            android:text="【稳定】【稳定】【稳定】"
+                            android:textColor="@color/td_highlight_text_direction"
+                            android:textSize="@dimen/tv_size_small_big" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal" >
+
+                        <TextView
+                            style="@style/style_tv_statistic"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginRight="2dp"
+                            android:text="@string/cap_tank_skill_bodywork" />
+
+                        <TextView
+                            android:id="@+id/tv_bodywork"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="left|center_vertical"
+                            android:gravity="left|center_vertical"
+                            android:padding="4dp"
+                            android:text="【稳定】【稳定】【稳定】"
+                            android:textColor="@color/td_highlight_text_direction"
+                            android:textSize="@dimen/tv_size_small_big" />
+                    </LinearLayout>
+
+                    <HorizontalScrollView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginTop="10dp" >
+
+                        <LinearLayout
+                            android:id="@+id/ll_btn_bar"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:visibility="gone" >
+
+                            <com.kituri.app.widget.XRelativeLayout
+                                android:id="@+id/rl_engine_check"
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:background="@drawable/bg_tech_small" >
+
+                                <ImageView
+                                    android:id="@+id/iv_engine_check"
+                                    android:layout_width="44dp"
+                                    android:layout_height="44dp"
+                                    android:layout_centerHorizontal="true"
+                                    android:layout_centerVertical="true"
+                                    android:src="@drawable/icon_tech_engine_type_01" />
+                            </com.kituri.app.widget.XRelativeLayout>
+
+                            <com.kituri.app.widget.XRelativeLayout
+                                android:id="@+id/rl_shield_check"
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:layout_marginLeft="10dp"
+                                android:background="@drawable/bg_tech_small" >
+
+                                <ImageView
+                                    android:id="@+id/iv_shield_check"
+                                    android:layout_width="44dp"
+                                    android:layout_height="44dp"
+                                    android:layout_centerHorizontal="true"
+                                    android:layout_centerVertical="true"
+                                    android:src="@drawable/icon_tech_shield_type_02" />
+                            </com.kituri.app.widget.XRelativeLayout>
+
+                            <com.kituri.app.widget.XRelativeLayout
+                                android:id="@+id/rl_bodywork_check"
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:layout_marginLeft="10dp"
+                                android:background="@drawable/bg_tech_small" >
+
+                                <ImageView
+                                    android:id="@+id/iv_bodywork_check"
+                                    android:layout_width="44dp"
+                                    android:layout_height="44dp"
+                                    android:layout_centerHorizontal="true"
+                                    android:layout_centerVertical="true"
+                                    android:src="@drawable/icon_tech_bodywork_type_01" />
+                            </com.kituri.app.widget.XRelativeLayout>
+
+                            <com.kituri.app.widget.XRelativeLayout
+                                android:id="@+id/rl_maingun_check"
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:layout_marginLeft="10dp"
+                                android:background="@drawable/bg_tech_small" >
+
+                                <ImageView
+                                    android:id="@+id/iv_maingun_check"
+                                    android:layout_width="44dp"
+                                    android:layout_height="44dp"
+                                    android:layout_centerHorizontal="true"
+                                    android:layout_centerVertical="true"
+                                    android:src="@drawable/icon_tech_maingun" />
+                            </com.kituri.app.widget.XRelativeLayout>
+
+                            <com.kituri.app.widget.XRelativeLayout
+                                android:id="@+id/rl_terrain_check"
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:layout_marginLeft="10dp"
+                                android:background="@drawable/bg_tech_small" >
+
+                                <ImageView
+                                    android:id="@+id/iv_terrain_check"
+                                    android:layout_width="44dp"
+                                    android:layout_height="44dp"
+                                    android:layout_centerHorizontal="true"
+                                    android:layout_centerVertical="true"
+                                    android:src="@drawable/terrain_icon_00" />
+                            </com.kituri.app.widget.XRelativeLayout>
+
+                            <com.kituri.app.widget.XRelativeLayout
+                                android:id="@+id/rl_rank_max_mode"
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:layout_marginLeft="10dp"
+                                android:background="@drawable/bg_tech_small" >
+
+                                <ImageView
+                                    android:id="@+id/iv_rank_max_mode"
+                                    android:layout_width="44dp"
+                                    android:layout_height="44dp"
+                                    android:layout_centerHorizontal="true"
+                                    android:layout_centerVertical="true"
+                                    android:src="@drawable/icon_rank_star" />
+                            </com.kituri.app.widget.XRelativeLayout>
+                        </LinearLayout>
+                    </HorizontalScrollView>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_other_detail_01"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/bg_edit_input"
+                    android:orientation="horizontal" >
+
+                    <com.kituri.app.widget.XImageView
+                        android:id="@+id/iv_live2d"
+                        android:layout_width="74dp"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/icon_live2d" />
+
+                    <TextView
+                        android:id="@+id/tv_profiles"
+                        android:layout_width="wrap_content"
+                        android:layout_height="100dp"
+                        android:layout_margin="4dp"
+                        android:text="介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍"
+                        android:textColor="@android:color/white"
+                        android:textSize="@dimen/tv_size_small_med" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_other_detail_02"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/bg_edit_input"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:id="@+id/tv_drop"
+                        android:layout_width="wrap_content"
+                        android:layout_height="20dp"
+                        android:layout_margin="4dp"
+                        android:gravity="center_vertical"
+                        android:text="介绍介绍介绍介绍介绍介绍介绍介绍介绍"
+                        android:textColor="@android:color/white"
+                        android:textSize="@dimen/tv_size_small_med" />
+                </LinearLayout>
             </LinearLayout>
         </LinearLayout>
-    </LinearLayout>
+    </ScrollView>
 
 </LinearLayout>

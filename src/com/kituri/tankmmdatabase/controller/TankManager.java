@@ -3,6 +3,7 @@ package com.kituri.tankmmdatabase.controller;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -160,39 +161,6 @@ public class TankManager {
 	}
 	
 	
-	
-//	static private List<TankData> getTestList(){
-//		List<TankData> lists = new ArrayList<TankData>();
-//		for(int i = 0; i < 10; i++){
-//			lists.add(getRandomTankMM());
-//		}
-//		return lists;
-//	}
-//	
-//	
-//	static private TankData getRandomTankMM(){
-//		TankData data = new TankData();
-//		data.setTankArmour(RandomUtils.randomMinMax(1000, 2000));
-//		data.setTankArmourPiercing(RandomUtils.randomMinMax(1000, 2000));
-//		data.setTankClass(RandomUtils.randomMinMax(TestTankData.testTanks));
-//		data.setTankDodge(RandomUtils.randomMinMax(1000, 2000));
-//		data.setTankDurable(RandomUtils.randomMinMax(1000, 2000));
-//		data.setTankFire(RandomUtils.randomMinMax(1000, 2000));
-//		data.setTankHide(RandomUtils.randomMinMax(1000, 2000));
-//		data.setTankHit(RandomUtils.randomMinMax(1000, 2000));
-//		data.setTankName("莫夏·梅列茨安娜");
-//		data.setTankNationality(RandomUtils.randomMinMax(TankDataBase.TANK_NATIONAL.ALL_STRING));
-//		data.setTankRange(RandomUtils.randomMinMax(1000, 2000));
-//		data.setTankSpot(RandomUtils.randomMinMax(1000, 2000));
-//		data.setTankStar(RandomUtils.randomMinMax(1, 3));
-//		data.setTankType(RandomUtils.randomMinMax(0, 5));
-//		data.setTankAcqierement("料理3  护理1");
-//		data.setTankEquipmentSlots("炮座 改装 外身 内壁 特殊");
-//		data.setTankEngine("抗暴露 抗风沙");
-//		data.setTankBodywork("抗积雪 广阔适应");		
-//		return data;
-//	}
-	
 	//获取装备插槽
 	static public List<EquipData> getEquipmentSlots(TankData data){
 		Boolean spMode = PsPushUserData.getData(KituriTankMMApplication.getInstance(),
@@ -230,39 +198,6 @@ public class TankManager {
 		
 		return list;
 	}
-	
-//	/**
-//	 * 
-//	 * */
-//	static public TankFilterList getTankFilterListForDialog(Context context, TankSearchData searchData){
-//		TankFilterList list = new TankFilterList();
-//		//TankSearchResult to = new TankSearchResult();
-//		//ALL和其他种类都是一种类型，用来映射其他搜索对象
-//		TankSearchData data = new TankSearchData(searchData);
-//		list.setTankSearchData(data);
-//		TankDataBase dataBase = new TankDataBase(data.getQueryKey());
-//		for(int i = 0; i < dataBase.getALL().size(); i++){
-//			TankSearchResult to = new TankSearchResult(data);
-//			to.setQueryKey(dataBase.getALL().get(i));
-//			to.setQueryValue(dataBase.getALL().get(i));
-//			to.setIconResId(context.getResources().getIdentifier(
-//					dataBase.getALL_ICONS().get(i), "drawable", context.getPackageName()));
-//			to.setName(dataBase.getALL_STRING().get(i));
-//			list.add(to);
-//		}
-//		return list;
-//	}
-//	
-//	static public TankSearchResult getTankSearchResultForDialogAll(Context context, TankFilterList list){
-//		TankSearchResult to = null;
-//		if(list.getEntries().size() != 0){
-//			to = new TankSearchResult(list.getTankSearchData());
-//			to.setName(TankDataBase.TANK_DEFAULT_ALL.ALL_STRING);
-//			to.setQueryValue(TankDataBase.TANK_DEFAULT_ALL.ALL);
-//		}
-//		return to;
-//	}
-	
 
 	static public void init(Context context){
 		KituriTankMMApplication.tanks.clear();
@@ -337,7 +272,7 @@ public class TankManager {
 				}
 				line = Utils.getLanguageString(line);
 				temp = line.split(",");
-				if (temp != null && temp.length == 30) {
+				if (temp != null && temp.length == 31) {
 					TankData tank = new TankData();
 					tank.setTankClass(temp[1]);
 					tank.setTankName(temp[2]);
@@ -362,6 +297,7 @@ public class TankManager {
 							break;
 						}
 					}
+					tank.setAge(temp[8]);
 					tank.setTankStar(Integer.parseInt(temp[9]));
 					tank.setTankAcqierement(temp[10]);
 					tank.setTankFire(Integer.parseInt(temp[11]));
@@ -373,6 +309,7 @@ public class TankManager {
 					tank.setTankHide(Integer.parseInt(temp[17]));
 					tank.setTankSpot(Integer.parseInt(temp[18]));
 					tank.setTankEquipmentSlots(temp[19]);
+					
 					
 					ArrayList<String> turrets = new ArrayList<String>();
 					if(!TextUtils.isEmpty(temp[20])){
@@ -405,6 +342,7 @@ public class TankManager {
 						}
 					}
 					tank.setTankShield(tags);
+					tank.setDrop(temp[30]);
 					tankLists.add(tank);
 				}
 			}
