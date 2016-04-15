@@ -1,5 +1,5 @@
-# TankMMBaseNew
-《钢舞姬图书馆》项目，需要依赖
+# 《钢舞姬图书馆》项目
+本项目需要依赖
 https://github.com/kituri/kituribase
 
 应用描述
