@@ -2,6 +2,9 @@
 本项目需要依赖
 https://github.com/kituri/kituribase
 
+apk直接下载地址：
+http://fir.im/tankmmlib
+
 应用描述
 
 为手机游戏《钢铁华尔兹》特殊定制的小工具，查询钢舞姬资料、科技资料、查看官方攻略、地形、装备S级别计算、和玄学（请自己去看）等模块组成。
